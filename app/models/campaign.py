@@ -6,7 +6,7 @@ Este modullo define la clase [Campaign] que representa una campaña de la base d
 from sqlalchemy import Boolean, Column, Integer, String
 from sqlalchemy.orm import relationship
 
-from base import Base
+from .base import Base
 
 
 class Campaign(Base):

@@ -1,6 +1,6 @@
 from app.config import local_session
-from app.models import Campaign, Domain
-
+from app.models.campaign import Campaign
+from app.models.domain import Domain    
 # =======================================
 # Controlador de Dominio
 # - Consultar el dominio asociado a una campaña (por nombre)

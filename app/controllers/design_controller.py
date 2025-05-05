@@ -1,5 +1,5 @@
 from app.config import local_session
-from app.models import DesignElement
+from app.models.design_element import DesignElement
 import json
 from sqlalchemy.exc import NoResultFound
 

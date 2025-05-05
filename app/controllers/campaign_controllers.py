@@ -2,7 +2,7 @@ import json
 from sqlalchemy.exc import NoResultFound
 
 from app.config import local_session
-from app.models import Campaign
+from app.models.campaign import Campaign
 
 # =======================================
 # Controlador de Campañas
@@ -73,3 +73,6 @@ def get_campaign(id: int) -> Campaign | None:
         # General error handling
         print(f"Error al obtener la campaña con el id: {id}", e)
         return None
+
+
+print(get_campaigns())
