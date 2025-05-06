@@ -73,4 +73,3 @@ def get_campaign(id: int) -> Campaign | None:
         print(f"Error al obtener la campaña con el id: {id}", e)
         return None
 
-print(get_campaigns())
