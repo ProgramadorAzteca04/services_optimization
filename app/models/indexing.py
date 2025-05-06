@@ -33,12 +33,11 @@ class Indexing(Base):
     # Atributos
     id = Column(Integer, primary_key=True)
     campaign_id = Column(Integer, ForeignKey("campaigns.id"), nullable=False)
-    credential_id = Column(Integer, ForeignKey("credentials.id"), nullable=False)
-    link_page = Column(String, nullable=True)
+    credential_id = Column(Integer, ForeignKey("credentials.id"), nullable=True)
+    link_page = Column(String)
 
-    # Relaciones
     campaign = relationship("Campaign", back_populates="indexings")
-    credential = relationship("Credential", back_populates="indexings")
+    credentials = relationship("Credential", backref="indexing_rel", foreign_keys=[credential_id])
 
     def __init__(self, campaign_id, credential_id, link_page):
         """

@@ -4,6 +4,7 @@ from sqlalchemy.exc import NoResultFound
 from app.config import local_session
 from app.models.campaign import Campaign
 
+
 # =======================================
 # Controlador de Campañas
 # - Consultar todas las campañas
@@ -36,10 +37,8 @@ def get_campaigns() -> str:
                     "state": campaign.state,
                 }
                 campaign_list.append(campaign_data)
-
             # Return JSON string of campaigns
             return json.dumps(campaign_list)
-
     except Exception as e:
         # Log error and return empty list
         print("Error al obtener las campañas:", e)
@@ -73,3 +72,5 @@ def get_campaign(id: int) -> Campaign | None:
         # General error handling
         print(f"Error al obtener la campaña con el id: {id}", e)
         return None
+
+print(get_campaigns())

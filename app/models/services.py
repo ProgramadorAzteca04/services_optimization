@@ -6,7 +6,7 @@ Este modullo define la clase [Campaign_services] que representa una campaña de 
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
-from base import Base
+from .base import Base
 
 class Services(Base):
       """Clase que representa una servicios por campaña en la base de datos.
@@ -27,7 +27,7 @@ class Services(Base):
       services_name = Column(String(), nullable=False)
       services_slug = Column(String(), nullable=False)
 
-      campaign = relationship("Campaign", back_populates="campaign_services")
+      campaign = relationship("Campaign", back_populates="services")
       def __init__(self, campaign_id, services_name, services_slug):
               self.campaign_id = campaign_id
               self.services_name = services_name

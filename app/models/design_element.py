@@ -6,7 +6,7 @@ Este modullo define la clase [DesignElement] que representa un elemento de dise√
 from sqlalchemy import  Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
-from base import Base
+from .base import Base
 
 class DesignElement(Base):
       """
@@ -40,8 +40,8 @@ class DesignElement(Base):
       __tablename__ = "design_elements"
 
       # Atributos:
-      id = Column(Integer, primary_key=True)
-      campaign_id = Column(Integer, ForeignKey("campaigns.id"))
+      id = Column(Integer, primary_key=True, index=True)
+      campaign_id = Column(Integer, ForeignKey("campaigns.id"), nullable=False)
       service = Column(String(), nullable=False)
       number = Column(String(), nullable=False)
       language = Column(String(), nullable=False)

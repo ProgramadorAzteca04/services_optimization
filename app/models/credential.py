@@ -8,7 +8,7 @@ Este modullo define la clase [Credentials] que representa una credencial de la b
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 
-from base import Base
+from .base import Base
 
 
 class Credential(Base):
@@ -32,16 +32,16 @@ class Credential(Base):
     __tablename__ = "credentials"
 
     # Atributos:
+
     id = Column(Integer, primary_key=True)
-    user = Column(String(), nullable=False)
-    password = Column(String(), nullable=False)
-    campaign_id = Column(Integer, ForeignKey("campaigns.id"))
-    indexing_id = Column(Integer, ForeignKey("indexing.id"))
+    user = Column(String, nullable=False)
+    password = Column(String, nullable=False)
+    campaign_id = Column(Integer, ForeignKey("campaigns.id"), nullable=True)
+    indexing_id = Column(Integer, ForeignKey("indexing.id"), nullable=True)
     last_reset = Column(DateTime, nullable=False)
 
-    # Relaciones:
     campaign = relationship("Campaign", back_populates="credentials")
-    indexing = relationship("Indexing", back_populates="credentials")
+    indexing = relationship("Indexing", foreign_keys=[indexing_id])
 
     def __init__(self, user, password, campaign_id, indexing_id, last_reset):
         """
