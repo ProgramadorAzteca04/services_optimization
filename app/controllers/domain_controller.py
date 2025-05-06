@@ -40,3 +40,4 @@ def get_domain(campaign_name: str) -> str | None:
     except Exception as e:
         print(f"Error al obtener el dominio de la campaña '{campaign_name}': {e}")
         return None
+
