@@ -17,6 +17,11 @@ def get_designs() -> list[DesignElement] | list:
 
     Raises:
         Exception: Error genérico durante la consulta a la base de datos (manejado internamente)
+        list[DesignElement] | list: Lista de objetos DesignElement si la consulta es exitosa,
+        lista vacía si ocurre algún error.
+
+    Raises:
+        Exception: Error genérico durante la consulta a la base de datos (manejado internamente)
     """
     try:
         with local_session() as session:
@@ -29,8 +34,10 @@ def get_designs() -> list[DesignElement] | list:
 def get_design(
     campaign_id: int,
     city: str,
+    city: str,
     title_seo: str,
     meta_description: str,
+    state: str,
     state: str,
     campaign: str,
     key_phrase: str,
@@ -43,6 +50,9 @@ def get_design(
             design = (
                 session.query(DesignElement).filter_by(campaign_id=campaign_id).first()
             )
+            design = (
+                session.query(DesignElement).filter_by(campaign_id=campaign_id).first()
+            )
             if design:
                 design_data = {
                     "id": design.id,
@@ -52,6 +62,15 @@ def get_design(
                     "layout": design.layout,
                     "address": design.address,
                     "country": design.country,
+                    "url": url,
+                    "reviews": reviews,
+                    "blocks": blocks,
+                    "campaign": campaign,
+                    "city": city,
+                    "title_seo": title_seo,
+                    "meta_description": meta_description,
+                    "state": state,
+                    "key_phrase": key_phrase,
                     "url": url,
                     "reviews": reviews,
                     "blocks": blocks,
@@ -74,7 +93,9 @@ def get_design(
                 return json.dumps([]), 404
     except NoResultFound:
         print("Error al obtener el elemento de diseño")
+        print("Error al obtener el elemento de diseño")
         return json.dumps([]), 404
     except Exception as e:
+        print(f"Error al obtener el elemento de diseño: {e}")
         print(f"Error al obtener el elemento de diseño: {e}")
         return json.dumps([]), 500
