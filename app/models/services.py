@@ -28,6 +28,14 @@ class Services(Base):
       services_slug = Column(String(), nullable=False)
 
       campaign = relationship("Campaign", back_populates="services")
+
+      def to_dict(self):
+        return {
+            "id": self.id,
+            "campaign_id": self.campaign_id,
+            "services_name": self.services_name,
+            "services_slug": self.services_slug
+        }
       def __init__(self, campaign_id, services_name, services_slug):
               self.campaign_id = campaign_id
               self.services_name = services_name

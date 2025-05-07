@@ -21,7 +21,7 @@ def get_all_services():
         session.close()
 
 # Obtener servicios por campaña
-def get_services_by_campaign(campaign_id):
+def get_services_by_campaign(campaign_id : int):
     session = local_session()
     try:
         services = session.query(Services).filter(Services.campaign_id == campaign_id).all()
@@ -83,3 +83,5 @@ def delete_service(service_id):
         }
     finally:
         session.close()
+
+print(get_services_by_campaign(1))
