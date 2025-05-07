@@ -85,3 +85,5 @@ def delete_service(service_id):
         session.close()
 
 print(get_services_by_campaign(1))
+
+
