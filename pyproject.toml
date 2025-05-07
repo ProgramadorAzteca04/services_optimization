@@ -7,6 +7,10 @@ requires-python = ">=3.11"
 dependencies = [
     "alembic>=1.15.2",
     "dotenv>=0.9.9",
+    "fastapi>=0.115.12",
+    "pandas>=2.2.3",
+    "playwright>=1.52.0",
     "psycopg[binary]>=3.2.7",
+    "schedule>=1.2.2",
     "sqlalchemy>=2.0.40",
 ]

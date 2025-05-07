@@ -21,7 +21,7 @@ def change_hour(hour):
 
 def run_jobs(register: dict):
     try:
-        create_page(
+        result = create_page(
             register["campaign_id"],
             register["city"],
             register["title_seo"],
@@ -33,8 +33,11 @@ def run_jobs(register: dict):
             register["url"],
         )
 
-        delete_scheduled_campaign(register["id"])
-
+        if result["status"] == "ok":
+            delete_scheduled_campaign(register["id"])
+        else:
+            print(result)
+            print(f"Error al ejecutar la tarea programada: {result['message']}")
     except Exception as e:
         print(f"Error al ejecutar la tarea programada: {str(e)}")
 
