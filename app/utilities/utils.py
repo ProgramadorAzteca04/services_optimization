@@ -23,6 +23,7 @@ def run_jobs(register: dict):
     try:
         result = create_page(
             register["campaign_id"],
+            register["services_name"],
             register["city"],
             register["title_seo"],
             register["meta_description"],
