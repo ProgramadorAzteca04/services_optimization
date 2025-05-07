@@ -34,10 +34,8 @@ def get_designs() -> list[DesignElement] | list:
 def get_design(
     campaign_id: int,
     city: str,
-    city: str,
     title_seo: str,
     meta_description: str,
-    state: str,
     state: str,
     campaign: str,
     key_phrase: str,

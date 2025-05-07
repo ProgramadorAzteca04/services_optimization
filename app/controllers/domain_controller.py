@@ -40,5 +40,3 @@ def get_domain(campaign_name: str) -> str | None:
     except Exception as e:
         print(f"Error al obtener el dominio de la campaña '{campaign_name}': {e}")
         return None
-
-print(get_domain("BOTANICA VIRGEN MORENA"))  # Cambia "Campaña de Prueba" por el nombre real de la campaña que deseas consultar.
