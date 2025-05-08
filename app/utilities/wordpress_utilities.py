@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
-from app.utilities.wordpress_utilities import page_title
-from app.utilities.wordpress_utilities import get_template
+#from app.utilities.wordpress_utilities import page_title
+#from app.utilities.wordpress_utilities import get_template
 from dotenv import load_dotenv
 from playwright.sync_api import Page
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
@@ -10,8 +10,7 @@ load_dotenv
 
 template_path = os.getenv("TEMPLATE_PATH")
 print(template_path)
-
-def page_title(page: Page, title: str):
+def page_title(Page: Page, title: str):
     try:
         Page.wait_for_selector("xpath=//input[@name='post_title']")
         Page.fill("//input[@name='post_title']", title)
@@ -215,7 +214,8 @@ def delete_template(page: Page, filtro: str = ""):
 
             try:
                 # Buscar solo si contiene 'Base optimizada' y el filtro (si hay)
-                xpath = f".//td[@data-colname='Título' or @data-colname='Title']//a[contains(text(), 'Base optimizada'){f' and contains(text(), \"{filtro}\")' if filtro else ''}]"
+                filtro_extra = f" and contains(text(), \"{filtro}\")" if filtro else ""
+                xpath = f".//td[@data-colname='Título' or @data-colname='Title']//a[contains(text(), 'Base optimizada'){filtro_extra}]"
                 titulo = fila.locator(f"xpath={xpath}")
 
                 if titulo.count() > 0:
@@ -285,7 +285,7 @@ def save_template(
     page.wait_for_selector("#the-list", timeout=10000)
     delete_template(page, filtro=filtro)
 
-    get_template(page, url, design_data)
+    #get_template(page, url, design_data)
 
     page.goto(template_url)
     delete_template(page, filtro=filtro)
@@ -347,7 +347,7 @@ def save_template(
     page.wait_for_selector("#the-list", timeout=10000)
     delete_template(page, filtro=filtro)
 
-    get_template(page, url, design_data, service=service)
+    #get_template(page, url, design_data, service=service)
 
     page.goto(template_url)
     delete_template(page, filtro=filtro)

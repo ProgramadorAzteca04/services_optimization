@@ -29,7 +29,7 @@ class CampaignData(BaseModel):
     state: str
     key_phrase: str
     url: str
-    review: int  # ✅ <- aquí debe ser review (sin "s")
+    review: int  #  <- aquí debe ser review (sin "s")
     blocks: List[str]
 
 
