@@ -7,7 +7,6 @@ from .scheduled import Scheduled
 from .credential import Credential
 from .services import Services
 
-
 __all__ = [
     "Base",
     "Campaign",
