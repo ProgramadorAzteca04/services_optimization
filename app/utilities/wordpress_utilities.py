@@ -54,7 +54,7 @@ def insert_wordpress_data(
     meta_description: str,
     title: str = "",
     reviews: int = 0,
-    service: dict = None
+    service: dict = None,
 ):
     if service:
         key_phrase = f"{service['name']} in {service['city']}"
