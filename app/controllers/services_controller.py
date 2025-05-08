@@ -83,3 +83,4 @@ def delete_service(service_id):
         }
     finally:
         session.close()
+

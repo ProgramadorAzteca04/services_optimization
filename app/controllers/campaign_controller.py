@@ -2,7 +2,8 @@ import json
 from sqlalchemy.exc import NoResultFound
 
 from app.config import local_session
-from app.models.campaign import Campaign
+from app.models import Campaign
+from app.models import Services
 
 
 # =======================================
@@ -72,5 +73,14 @@ def get_campaign(id: int) -> Campaign | None:
         # General error handling
         print(f"Error al obtener la campaña con el id: {id}", e)
         return None
+    
 
-print(get_campaigns())
+def get_services_by_campaign(campaign_id: int):
+    session = local_session()
+    try:
+        services = session.query(Services).filter(Services.campaign_id == campaign_id).all()
+        return [service.to_dict() for service in services]
+    except Exception as e:
+        raise Exception(f"Error al obtener los servicios: {e}")
+    finally:
+        session.close()
