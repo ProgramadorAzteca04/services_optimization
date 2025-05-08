@@ -49,7 +49,7 @@ def create_service(data):
         session.commit()
         return {
             "success": True,
-            "message": "✅ Servicio creado exitosamente",
+            "message": " Servicio creado exitosamente",
             "service": new_service.to_dict()
         }
     except Exception as e:
@@ -70,11 +70,11 @@ def delete_service(service_id):
             session.commit()
             return {
                 "success": True,
-                "message": f"🗑️ Servicio con ID {service_id} eliminado exitosamente"
+                "message": f" Servicio con ID {service_id} eliminado exitosamente"
             }
         return {
             "success": False,
-            "message": f"⚠️ Servicio con ID {service_id} no encontrado"
+            "message": f" Servicio con ID {service_id} no encontrado"
         }
     except Exception as e:
         return {

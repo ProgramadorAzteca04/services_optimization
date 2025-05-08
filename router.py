@@ -6,7 +6,7 @@ from typing import List
 from app.controllers.campaign_controller import get_campaigns
 from app.controllers.scheduled_controller import (
     get_scheduled_campaigns,
-    delete_scheduled_campaign,
+    deleted_scheduled_campaign,
     create_scheduled
 )
 from app.controllers import create_page
@@ -20,7 +20,7 @@ router = APIRouter()
 class CampaignData(BaseModel):
     id: int
     city: str
-    services: str  # ✅ nuevo campo
+    services: str  # nuevo campo
     title_seo: str
     meta_description: str
     state: str
@@ -45,7 +45,7 @@ def new_campaign(data: CampaignData):
         create_page(
             data.id,
             data.city,
-            data.services,  # ✅ incluido aquí
+            data.services,  # incluido aquí
             data.title_seo,
             data.meta_description,
             data.state,
@@ -73,7 +73,7 @@ async def scheduled():
 @router.delete("/delete_scheduled/{scheduled_id}")
 async def delete_scheduled(scheduled_id: int):
     try:
-        result = delete_scheduled_campaign(scheduled_id)
+        result = deleted_scheduled_campaign(scheduled_id)
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

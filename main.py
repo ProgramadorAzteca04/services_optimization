@@ -5,13 +5,13 @@ from fastapi.responses import JSONResponse
 from fastapi import Request
 import schedule
 import time
-
+from router import router
 
 
 
 app = FastAPI()
 
-app.include_router()
+app.include_router(router)
 
 app.exception_handler = (RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
