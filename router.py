@@ -1,36 +1,39 @@
-from fastapi import APIRouter, HTTPException, UploadFile, Request
 import json
-from pydantic import BaseModel
+import os
 from typing import List
 
+from fastapi import APIRouter, HTTPException, Request, UploadFile
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+
+
 from app.controllers.campaign_controller import get_campaigns
+from app.controllers.services_controller import get_services_by_campaign
 from app.controllers.scheduled_controller import (
+    create_scheduled,
+    delete_scheduled_campaign,
     get_scheduled_campaigns,
-    deleted_scheduled_campaign,
-    create_scheduled
 )
-from app.controllers import create_page
-from app.utilities import process_excel, massive_creation
-from app.utilities.utils import programming_hour, change_hour
+from app.utilities import massive_creation, process_excel
+from app.utilities.utils import change_hour, programming_hour
 
 router = APIRouter()
 
 
-#  Modelo con 'services' incluido
 class CampaignData(BaseModel):
     id: int
     city: str
-    services: str  # nuevo campo
+    services: dict
     title_seo: str
     meta_description: str
     state: str
     key_phrase: str
     url: str
-    review: int
+    review: int  # ✅ <- aquí debe ser review (sin "s")
     blocks: List[str]
 
 
-# Obtener campañas
+### CAMPAÑAS ###
 @router.get("/campaigns")
 async def campaigns():
     campaigns = get_campaigns()
@@ -38,30 +41,9 @@ async def campaigns():
     return campaign_list
 
 
-#  Crear nueva campaña con campo 'services'
-@router.post("/new_campaign")
-def new_campaign(data: CampaignData):
-    try:
-        create_page(
-            data.id,
-            data.city,
-            data.services,  # incluido aquí
-            data.title_seo,
-            data.meta_description,
-            data.state,
-            data.key_phrase,
-            int(data.review),
-            data.blocks,
-            data.url,
-        )
-        return {"message": "Página creada"}
-    except HTTPException as e:
-        raise e
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+#
 
-
-# Obtener programaciones
+### PROGRAMACIONES ###
 @router.get("/scheduled")
 async def scheduled():
     scheduled = get_scheduled_campaigns()
@@ -69,21 +51,20 @@ async def scheduled():
     return scheduled_list
 
 
-# Eliminar una programación
 @router.delete("/delete_scheduled/{scheduled_id}")
 async def delete_scheduled(scheduled_id: int):
     try:
-        result = deleted_scheduled_campaign(scheduled_id)
+        result = delete_scheduled_campaign(scheduled_id)
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 
-#  Subir archivo Excel que ya incluye 'services'
 @router.post("/upload_excel")
 async def upload_json(file: UploadFile):
     try:
         data = process_excel(file)
+
         success_ids = massive_creation(data, create_scheduled)
 
         return {
@@ -102,7 +83,6 @@ async def upload_json(file: UploadFile):
         )
 
 
-# Consultar hora programada actual
 @router.get("/get_programmed_hour")
 async def get_programmed_hour():
     try:
@@ -114,7 +94,6 @@ async def get_programmed_hour():
         )
 
 
-# Cambiar hora programada
 @router.post("/program_hour")
 async def program_hour(request: Request):
     try:
@@ -122,6 +101,26 @@ async def program_hour(request: Request):
         new_hour = body["programming_hour"]
         change_hour(new_hour)
         return {"message": "Hora programada"}
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error interno: {str(e)}",
+        )
+
+
+@router.get("/download_report/")
+async def download_report():
+    ruta = os.path.join("static", "report.xlsx")
+    return FileResponse(ruta, filename="report.xlsx")
+
+
+@router.get("/services/{campaign_id}")
+async def get_services(campaign_id: int):
+    try:
+        services = get_services_by_campaign(campaign_id)
+        if not services:
+            raise HTTPException(status_code=404, detail="No se encontraron servicios")
+        return services
     except Exception as e:
         raise HTTPException(
             status_code=500,

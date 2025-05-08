@@ -7,7 +7,7 @@ from app.config.database_config import local_session
 def get_all_services():
     session = local_session()
     try:
-        services = session.query(Services).all()
+        services = session.query(Services).order_by(Services.id.asc()).all()
         return {
             "success": True,
             "data": [s.to_dict() for s in services]
@@ -83,3 +83,4 @@ def delete_service(service_id):
         }
     finally:
         session.close()
+

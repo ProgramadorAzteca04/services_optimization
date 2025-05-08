@@ -47,7 +47,7 @@ def process_excel(file: UploadFile) -> List[Dict]:
         )
 
         # Limpieza y transformación de datos
-        text_columns = ["title_seo", "meta_description", "state", "key_phrase", "url"]
+        text_columns = ["title_seo", "service" ,"meta_description", "state", "key_phrase", "url"]
         for col in text_columns:
             if col in df.columns:
                 df[col] = df[col].astype(str).str.strip()
@@ -106,6 +106,7 @@ def massive_creation(data: List[Dict], create_function: callable) -> None:
             success = create_function(
                 campaign_id=item.get("id"),
                 city=item.get("city"),
+                service=item.get("service"),
                 title_seo=item.get("title_seo"),
                 meta_description=item.get("meta_description"),
                 state=item.get("state"),
