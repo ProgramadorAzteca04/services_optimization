@@ -8,10 +8,27 @@ from app.controllers import (
     save_json_file,
 )
 
+from app.utilities.utils import choose_random_link
+
 json_file = "app/components/elite_chicago_spa/laser_hair_removal_in_chicago.json"
+links = [
+    {
+        "url": "https://www.elitechicagospa.com/laser-hair-removal-in-chicago/",
+        "keywords": [
+            "laser hair removal chicago",
+            "best laser hair removal chicago",
+            "chicago laser hair removal",
+            "laser hair removal chicago il",
+            "laser hair removal in chicago",
+            "affordable laser hair removal chicago",
+            "best chicago laser hair removal"
+        ]
+    }
+]
+url = choose_random_link(links)
 
 
-class Elite:
+class LaserHairRemovalChicago:
     def __init__(self, options):
         self.options = options
         self.gpt = GPT(self.options)

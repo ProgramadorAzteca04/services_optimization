@@ -6,6 +6,7 @@ from app.controllers import create_page
 import schedule
 import json
 from datetime import datetime
+import random
 
 programming_hour = "15:08"
 
@@ -71,3 +72,12 @@ def run_scheduled_jobs():
 def program_daily_jobs(hour):
     print("Tareas Programadas")
     schedule.every().day.at(hour).do(run_scheduled_jobs)
+
+def choose_random_link(links: dict):
+    # Elegir un enlace aleatorio de la lista
+    link_data = random.choice(links)
+    # Elegir una palabra clave aleatoria del enlace seleccionado
+    keyword_aleatoria = random.choice(link_data["keywords"])
+    # Formar el enlace con la palabra clave
+    enlace = f"{link_data['url']}?keyword={keyword_aleatoria.replace(' ', '+')}"
+    return enlace

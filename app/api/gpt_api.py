@@ -284,7 +284,7 @@ Avoid clickbait phrases or overused marketing language. Do not include the compa
 For your answer, take into account the structure and the highlighted texts in the original text, so that you create a similar structure, so that the structure is as similar as possible, but with different content.
 
 Please include the following hyperlinks somewhere in the text:
-<a href=\"https:\/\/elitechicagospa.com\/botox-chicago\/\" target=\"_blank\" rel=\"noopener\">Botox in Chicago<\/a>
+<a href="https://elitechicagospa.com/botox-chicago/" target="_blank" rel="noopener">Botox in Chicago</a>
 
 
 you can take the original text as a reference.

@@ -6,7 +6,7 @@ from fastapi import APIRouter, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-
+from app.controllers import create_page
 from app.controllers.campaign_controller import get_campaigns
 from app.controllers.services_controller import get_services_by_campaign
 from app.controllers.scheduled_controller import (
@@ -41,7 +41,26 @@ async def campaigns():
     return campaign_list
 
 
-#
+@router.post("/new_campaign")
+def new_campaign(data: CampaignData):
+    try:
+        result = create_page(
+            data.id,
+            data.city,
+            data.services,
+            data.title_seo,
+            data.meta_description,
+            data.state,
+            data.key_phrase,
+            int(data.review),
+            data.blocks,
+            data.url,
+        )
+        return result
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 ### PROGRAMACIONES ###
 @router.get("/scheduled")
