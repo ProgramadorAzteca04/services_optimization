@@ -125,8 +125,15 @@ def get_template(page: Page, link: str, file_name: str):
 
     print("Aplicando plantilla...")
     for element in elements:
-        name = element.query_selector(".elementor-template-library-template-name")
-        text_name = name.inner_text() if name else ""
+        try:
+            name = element.query_selector(".elementor-template-library-template-name")
+            if not name:
+                print(" Elemento sin nombre detectado, se omite.")
+                continue
+            text_name = name.inner_text()
+        except Exception as e:
+            print(" Error al obtener el nombre del template:", e)
+            continue
 
         if str(text_name).lower() == "base optimizada":
             try:
