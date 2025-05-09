@@ -14,7 +14,6 @@ from app.models.domain import Domain
 def perform_login(
     page: Page,
     campaign_name: str,
-    layout: str,
     url: str,
     design_data: dict,
 ):
@@ -32,13 +31,13 @@ def perform_login(
 
                     page.goto(f"{domain}wp-admin")
                     login(page, admin, password)
+
                     template = design_data.get("campaign").lower().replace(" ", "_")
-                    template_file = (
-                        f"app/layouts/{template}.json"  # Ruta de la plantilla
-                    )
-                    save_template(
-                        page, template_file, domain, url, init_layout, design_data
-                    )  # Guarda la plantilla
+                    template_file = f"app/layouts/{template}.json"
+
+                    init_layout = InitLayout(design_data).init()
+                    save_template(page, template_file, domain, url, init_layout, design_data)
+
                     go_to_page_section(page, domain)
                     print(f"Login realizado con éxito a {campaign_name}")
                 else:
@@ -47,6 +46,7 @@ def perform_login(
                 print("No se encontró la campaña")
     except Exception as e:
         print(f"Error al iniciar sesión: {e}")
+
 
 
 # Obtener información del sitio web

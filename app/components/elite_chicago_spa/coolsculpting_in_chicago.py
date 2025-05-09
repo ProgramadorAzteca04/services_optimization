@@ -10,6 +10,7 @@ from app.controllers import (
 
 from app.utilities.utils import choose_random_link
 
+
 json_file = "app/layouts/elite_chicago_spa/coolsculpting_in_chicago.json"
 links = [
     {
@@ -29,8 +30,6 @@ links = [
         ]
     }
 ]
-
-url = choose_random_link(links)
 
 
 class CoolsculptingChicago:

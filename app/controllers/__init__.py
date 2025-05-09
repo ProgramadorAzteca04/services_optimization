@@ -6,7 +6,7 @@ from .json_controller import (
 )
 
 from .domain_controller import get_domain
-from .page_controller import get_website_info, create_page
+from .page_controller import get_website_info
 
 __all__ = [
     "load_json_file",
@@ -19,5 +19,4 @@ __all__ = [
     "get_domain",
     "find_element",
     "get_website_info",
-    "create_page",
-]
+ ]

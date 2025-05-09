@@ -1,12 +1,13 @@
+# utils.py
 from app.controllers.scheduled_controller import (
     get_scheduled_campaigns,
     delete_scheduled_campaign,
 )
-from app.controllers import create_page
 import schedule
 import json
 from datetime import datetime
 import random
+
 
 programming_hour = "15:08"
 
@@ -15,7 +16,6 @@ def change_hour(hour):
     global programming_hour
     programming_hour = hour
     schedule.clear()
-
     program_daily_jobs(hour)
     print(f"Tareas programadas para la hora {programming_hour}")
 
@@ -55,7 +55,6 @@ def obtain_registers():
         scheduled_list = json.loads(scheduled)
         print(f"Registros obtenidos: {len(scheduled_list)}")
         return scheduled_list
-
     except Exception as e:
         print(f"Error al obtener los registros: {str(e)}")
         return []
@@ -73,11 +72,8 @@ def program_daily_jobs(hour):
     print("Tareas Programadas")
     schedule.every().day.at(hour).do(run_scheduled_jobs)
 
-def choose_random_link(links: dict):
-    # Elegir un enlace aleatorio de la lista
+
+def choose_random_link(links) -> str:
     link_data = random.choice(links)
-    # Elegir una palabra clave aleatoria del enlace seleccionado
-    keyword_aleatoria = random.choice(link_data["keywords"])
-    # Formar el enlace con la palabra clave
-    enlace = f"{link_data['url']}?keyword={keyword_aleatoria.replace(' ', '+')}"
-    return enlace
+    keyword = random.choice(link_data["keywords"])
+    return f"{link_data['url']}?keyword={keyword.replace(' ', '+')}"

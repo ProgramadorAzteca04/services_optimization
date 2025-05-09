@@ -6,7 +6,7 @@ from fastapi import APIRouter, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-from app.controllers import create_page
+from app.controllers.page_controller import create_page
 from app.controllers.campaign_controller import get_campaigns
 from app.controllers.services_controller import get_services_by_campaign
 from app.controllers.scheduled_controller import (
