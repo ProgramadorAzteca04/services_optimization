@@ -1,7 +1,7 @@
 import json
 import os
-from typing import List
-
+from typing import List, Dict
+from app.controllers import create_page
 from fastapi import APIRouter, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
@@ -23,7 +23,9 @@ router = APIRouter()
 class CampaignData(BaseModel):
     id: int
     city: str
-    services: dict
+    services: str
+    name: str
+    slug: str
     title_seo: str
     meta_description: str
     state: str
@@ -41,7 +43,7 @@ async def campaigns():
     return campaign_list
 
 
-#
+
 
 ### PROGRAMACIONES ###
 @router.get("/scheduled")
@@ -126,3 +128,32 @@ async def get_services(campaign_id: int):
             status_code=500,
             detail=f"Error interno: {str(e)}",
         )
+    
+@router.post("/new_campaign")
+def new_campaign(data: CampaignData):
+    try:
+        print(" JSON recibido:", data)
+        print(" Llamando a create_page con:")
+        print(data.id, data.city, data.name, data.slug, data.name, data.title_seo, data.meta_description)
+        
+        result = create_page(
+            data.id,
+            data.city,
+            data.services,
+            data.name,
+            data.slug,
+            data.title_seo,
+            data.meta_description,
+            data.state,
+            data.key_phrase,
+            int(data.review),
+            data.blocks,
+            data.url,
+        )
+        return result
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+        
+ 

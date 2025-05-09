@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
-#from app.utilities.wordpress_utilities import page_title
-#from app.utilities.wordpress_utilities import get_template
+
 from dotenv import load_dotenv
 from playwright.sync_api import Page
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError

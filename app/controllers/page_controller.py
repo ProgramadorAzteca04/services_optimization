@@ -51,6 +51,10 @@ def create_page(
     reviews: int,
     blocks: list,
     url: str,
+    result = None,
+
+
+    
 ):
     try:
         website_info = get_website_info(
