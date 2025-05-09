@@ -8,9 +8,7 @@ class InitLayout:
     def init(self):
         try:
             switch = {
-                15: EliteChicagoSpa,  # ID de campaña → clase
-                # Puedes agregar más campañas así:
-                # 16: OtraCampaña,
+                15: EliteChicagoSpa, 
             }
 
             layout_id = int(self.options["layout"])

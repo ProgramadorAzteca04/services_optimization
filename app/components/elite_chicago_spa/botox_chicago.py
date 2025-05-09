@@ -3,11 +3,12 @@ from fastapi import HTTPException
 from app.api import GPT
 from app.config import local_session
 from app.controllers import (
-    get_domain,
     load_json_file,
     save_json_file,
 )
+
 from app.utilities.utils import choose_random_link
+
 
 json_file = "app/layouts/elite_chicago_spa/botox_chicago.json"
 links = [ 

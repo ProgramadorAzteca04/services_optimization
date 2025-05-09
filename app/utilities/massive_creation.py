@@ -16,7 +16,6 @@ def process_excel(file: UploadFile) -> List[Dict]:
         # Columnas requeridas y de bloques
         required_columns = [
             "id",
-            "city",
             "service",
             "title_seo",
             "meta_description",

@@ -9,6 +9,8 @@ from datetime import datetime
 import random
 
 
+
+
 programming_hour = "15:08"
 
 
@@ -22,13 +24,12 @@ def change_hour(hour):
 
 def run_jobs(register: dict):
     try:
+        from app.controllers.page_controller import create_page 
         result = create_page(
             register["campaign_id"],
             register["services_name"],
-            register["city"],
             register["title_seo"],
             register["meta_description"],
-            register["state"],
             register["key_phrase"],
             register["total_reviews"],
             register["blocks"],

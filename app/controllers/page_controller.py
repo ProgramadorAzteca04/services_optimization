@@ -8,11 +8,9 @@ import json
 
 def get_website_info(
     id: int,
-    city: str,
     service: dict,
     title_seo: str,
     meta_description: str,
-    state: str,
     key_phrase: str,
     url: str,
     reviews: int,
@@ -27,11 +25,9 @@ def get_website_info(
 
     return get_design(
         id,
-        city,
         service,
         title_seo,
         meta_description,
-        state,
         name,
         key_phrase,
         url,
@@ -42,11 +38,9 @@ def get_website_info(
 
 def create_page(
     id: int,
-    city: str,
     service: dict,
     title_seo: str,
     meta_description: str,
-    state: str,
     key_phrase: str,
     reviews: int,
     blocks: list,
@@ -55,11 +49,9 @@ def create_page(
     try:
         website_info = get_website_info(
             id,
-            city,
             service,
             title_seo,
             meta_description,
-            state,
             key_phrase,
             url,
             reviews,
