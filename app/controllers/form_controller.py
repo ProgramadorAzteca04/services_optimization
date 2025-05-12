@@ -17,20 +17,38 @@ def perform_login(
     url: str,
     design_data: dict,
 ) -> str:
+    """
+    1) Recupera el dominio desde BD
+    2) Navega a la pantalla de login de WP
+    3) Rellena credenciales y espera a que el dashboard cargue
+    4) Devuelve el dominio para seguir el flujo
+    """
     with local_session() as session:
         campaign = session.query(Campaign).filter_by(id=campaign_id).first()
         if not campaign:
-            print("Campaña no encontrada")
-            return ""
+            raise Exception(f"Campaña {campaign_id} no encontrada")
         domain_info = session.query(Domain).filter_by(campaign_id=campaign.id).first()
         if not domain_info:
-            print("Dominio no configurado")
-            return ""
+            raise Exception(f"Dominio para campaña {campaign_id} no configurado")
+
+        # --- 1) Preparar dominio y URL de login ---
         domain = domain_info.domain.rstrip("/")
-        # Navegar al login de WP
-        page.goto(f"{domain}/wp-admin")
-        login(page, domain_info.admin, domain_info.password)
-        print(f"Login realizado en {domain}")
+        login_url = f"{domain}/wp-login.php"
+
+        # --- 2) Ir a la página de login y esperar al formulario ---
+        page.goto(login_url)
+        page.wait_for_selector("#user_login", timeout=15000)
+
+        # --- 3) Rellenar credenciales y enviar ---
+        page.fill("#user_login", domain_info.admin)
+        page.fill("#user_pass", domain_info.password)
+        page.click("#wp-submit")
+
+        # --- 4) Esperar a que cargue el Panel de Control ---
+        # Por ejemplo, que aparezca el menú lateral de WP Admin
+        page.wait_for_selector("#adminmenu", timeout=15000)
+
+        print(f"✅ Login realizado exitosamente en {domain}")
         return domain
 
 

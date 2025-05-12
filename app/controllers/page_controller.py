@@ -8,6 +8,7 @@ from app.controllers.design_controller import get_design
 from app.components.init_layout_component import InitLayout
 from app.utilities.wordpress_utilities import save_template, go_to_page_section
 
+
 def get_website_info(
     campaign_id: int,
     title_seo: str,
@@ -26,6 +27,7 @@ def get_website_info(
         reviews,
         blocks,
     )
+
 
 def create_page(
     campaign_id: int,
@@ -62,7 +64,8 @@ def create_page(
         try:
             browser = playwright.chromium.launch(
                 headless=False,
-                args=["--window-size=1524,968", "--force-device-scale-factor=0.64"],
+                args=["--window-size=1524,968",
+                      "--force-device-scale-factor=0.64"],
             )
             page = browser.new_page()
             page.set_viewport_size({"width": 1524, "height": 968})
@@ -80,19 +83,18 @@ def create_page(
                 raise Exception("No se obtuvo dominio tras login")
 
             # 5. Guardar plantilla en Elementor
-            template_name = str(design_data["campaign"]).lower().replace(" ", "_")
+            template_name = str(
+                design_data["campaign"]).lower().replace(" ", "_")
             template_file = f"app/layouts/{template_name}.json"
             save_template(
                 page,
                 template_file,
-                domain,          # dominio correcto
-                url,
                 init_layout,
                 design_data
             )
 
             # 6. Navegar a la sección de edición
-            go_to_page_section(page, domain)
+            go_to_page_section(page, url)
 
             # 7. Publicar contenido y limpiar
             wp = WordpressComponent(page, design_data)
