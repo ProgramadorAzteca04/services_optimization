@@ -6,7 +6,7 @@ from fastapi import APIRouter, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-from app.controllers.page_controller import create_page
+
 from app.controllers.campaign_controller import get_campaigns
 from app.controllers.services_controller import get_services_by_campaign
 from app.controllers.scheduled_controller import (
@@ -19,43 +19,49 @@ from app.utilities import massive_creation, process_excel
 from app.utilities.utils import change_hour, programming_hour
 
 router = APIRouter()
-class CampaignData(BaseModel):
-    id: int
+
+
+class BotExecutionData(BaseModel):
     campaign_id: int
     title_seo: str
     meta_description: str
     key_phrase: str
     url: str
-    review: int  #  <- aquí debe ser review (sin "s")
+    review: int
     blocks: List[str]
 
 
 ### CAMPAÑAS ###
-@router.get("/campaigns")
+@router.get("/{campaign_id}")
 async def campaigns():
     campaigns = get_campaigns()
     campaign_list = json.loads(campaigns)
     return campaign_list
 
 
-@router.post("/new_campaign")
-def new_campaign(data: CampaignData):
+@router.post("/services/")
+def run_bot(data: BotExecutionData):
     try:
-        result = create_page(
-            data.id,
+        from app.controllers.page_controller import create_page
+
+        result =  create_page(
             data.campaign_id,
             data.title_seo,
             data.meta_description,
             data.key_phrase,
-            int(data.review),
+            data.review,
             data.blocks,
             data.url,
         )
-        return result
-    except HTTPException as e:
-        raise e
+
+        return {
+            "status": "ok",
+            "message": f"Bot ejecutado correctamente para campaña {data.campaign_id}",
+            "result": result,
+        }
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Error al ejecutar el bot: {str(e)}")
 
 ### PROGRAMACIONES ###
 @router.get("/scheduled")
@@ -147,4 +153,7 @@ def new_campaign(data: CampaignData):
     except HTTPException as e:
         raise e
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error interno: {str(e)}",
+        )

@@ -13,39 +13,25 @@ from app.models.domain import Domain
 # Perform login function
 def perform_login(
     page: Page,
-    campaign_name: str,
+    campaign_id: int,
     url: str,
     design_data: dict,
-):
-    try:
-        with local_session() as session:
-            campaign = session.query(Campaign).filter_by(name=campaign_name).first()
-            if campaign:
-                domain_info = (
-                    session.query(Domain).filter_by(campaign_id=campaign.id).first()
-                )
-                if domain_info:
-                    domain = domain_info.domain
-                    admin = domain_info.admin
-                    password = domain_info.password
-
-                    page.goto(f"{domain}wp-admin")
-                    login(page, admin, password)
-
-                    template = design_data.get("campaign").lower().replace(" ", "_")
-                    template_file = f"app/layouts/{template}.json"
-
-                    init_layout = InitLayout(design_data).init()
-                    save_template(page, template_file, domain, url, init_layout, design_data)
-
-                    go_to_page_section(page, domain)
-                    print(f"Login realizado con éxito a {campaign_name}")
-                else:
-                    print(f"Error al iniciar sesión en {campaign_name}")
-            else:
-                print("No se encontró la campaña")
-    except Exception as e:
-        print(f"Error al iniciar sesión: {e}")
+) -> str:
+    with local_session() as session:
+        campaign = session.query(Campaign).filter_by(id=campaign_id).first()
+        if not campaign:
+            print("Campaña no encontrada")
+            return ""
+        domain_info = session.query(Domain).filter_by(campaign_id=campaign.id).first()
+        if not domain_info:
+            print("Dominio no configurado")
+            return ""
+        domain = domain_info.domain.rstrip("/")
+        # Navegar al login de WP
+        page.goto(f"{domain}/wp-admin")
+        login(page, domain_info.admin, domain_info.password)
+        print(f"Login realizado en {domain}")
+        return domain
 
 
 

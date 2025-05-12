@@ -40,11 +40,12 @@ def get_design(
     try:
         with local_session() as session:
             design = (
-                session.query(DesignElement).filter_by(campaign_id=campaign).first()
+                session.query(DesignElement)
+                .filter_by(campaign_id=campaign_id)
+                .first()
             )
             if design:
                 design_data = {
-                    "id": design.id,
                     "service": design.service,
                     "number": design.number,
                     "language": design.language,
@@ -54,7 +55,6 @@ def get_design(
                     "url": url,
                     "reviews": reviews,
                     "blocks": blocks,
-                    "campaign": campaign,
                     "title_seo": title_seo,
                     "meta_description": meta_description,
                     "key_phrase": key_phrase,
@@ -68,10 +68,11 @@ def get_design(
                 }
                 return design_data
             else:
-                raise HTTPException(status_code=404, detail="No se encontró el diseño solicitado")
+                return json.dumps({"error": "DesignElement no encontrado"})
     except NoResultFound:
-        print("Error al obtener el elemento de diseño")
-        return json.dumps([]), 404
+        print("No se encontró el elemento de diseño con campaign_id.")
+        return json.dumps({"error": "No se encontró el DesignElement"})
     except Exception as e:
         print(f"Error al obtener el elemento de diseño: {e}")
-        return json.dumps([]), 500
+        return json.dumps({"error": f"Error interno: {str(e)}"})
+
