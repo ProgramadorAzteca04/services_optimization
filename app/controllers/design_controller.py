@@ -28,8 +28,8 @@ def get_designs() -> list[DesignElement] | list:
 
 
 def get_design(
-    id: int,
-    campaign: int,
+
+    campaign_id: int,
     title_seo: str,
     meta_description: str,
     key_phrase: str,
