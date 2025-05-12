@@ -4,6 +4,7 @@ from typing import List
 from app.controllers import create_page
 from fastapi import APIRouter, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
+from app import CampaignData 
 from pydantic import BaseModel
 
 
