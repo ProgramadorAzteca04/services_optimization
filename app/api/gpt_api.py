@@ -12,7 +12,11 @@ class GPT:
     def __init__(self, design_data: dict):
         self.client = OpenAI()
         self.design_data = design_data
-        self.service = str(design_data.get("service")).title()
+        service = design_data.get("service")
+        if isinstance(service, dict):
+            self.service = service.get("name", "").title()
+        else:
+            self.service = str(service).title()
         self.campaign = str(design_data.get("campaign") or "")
         self.city = str(design_data.get("city")).title()
         self.state = str(design_data.get("state") or "").capitalize().title()

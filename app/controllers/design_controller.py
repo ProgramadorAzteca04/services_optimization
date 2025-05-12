@@ -3,6 +3,7 @@ from app.config import local_session
 from app.models import DesignElement
 from fastapi import HTTPException
 import json
+from app.models.services import Services
 
 
 def get_designs() -> list[DesignElement] | list:
@@ -28,7 +29,6 @@ def get_designs() -> list[DesignElement] | list:
 
 
 def get_design(
-
     campaign_id: int,
     title_seo: str,
     meta_description: str,
@@ -46,7 +46,11 @@ def get_design(
             )
             if design:
                 design_data = {
-                    "service": design.service,
+                    "campaign_id": design.campaign_id,
+                   "service": {
+                    "service_name": design.service,
+                    "service_slug": design.service.lower().replace(" ", "-")
+                    },
                     "number": design.number,
                     "language": design.language,
                     "layout": design.layout,
@@ -66,7 +70,7 @@ def get_design(
                     "meta": design.meta,
                     "channel_id": design.channel_id,
                 }
-                return design_data
+                return json.dumps(design_data)
             else:
                 return json.dumps({"error": "DesignElement no encontrado"})
     except NoResultFound:

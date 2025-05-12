@@ -357,7 +357,7 @@ def save_template(
 ):
 
     template_url = (
-        f"{domain}wp-admin/edit.php?post_type=elementor_library&tabs_group=library"
+          f"{domain.rstrip('/')}/wp-admin/edit.php?post_type=elementor_library&tabs_group=library"
     )
     page.goto(template_url)
 
