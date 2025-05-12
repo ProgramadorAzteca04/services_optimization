@@ -33,8 +33,8 @@ class Services(Base):
         return {
             "id": self.id,
             "campaign_id": self.campaign_id,
-            "service_names": self.services_name,
-            "service_slugs": self.services_slug
+            "service_name": self.service_name,
+            "service_slug": self.service_slug
         }
       def __init__(self, campaign_id, service_name, service_slug):
               self.campaign_id = campaign_id

@@ -5,6 +5,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 from playwright.sync_api import Page
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from app.components.init_layout_component import InitLayout
 
 load_dotenv
 
@@ -270,9 +274,10 @@ def save_template(
     template_file: str,
     domain: str,
     url: str,
-  #  init_layout: InitLayout,
+    init_layout: "InitLayout",
     design_data: dict,
     service: dict = None,
+    
 ):
     filtro = service["slug"] if service and "slug" in service else ""
     service_name = service["name"] if service else ""

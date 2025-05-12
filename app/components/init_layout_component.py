@@ -1,10 +1,18 @@
 from fastapi import HTTPException
+import json
 from app.components.elite_chicago_spa.init_elite_chicago_spa import EliteChicagoSpa
 
 class InitLayout:
     def __init__(self, options: dict):
         self.options = options
+        print(f"[DEBUG] Type of options: {type(self.options)}")
 
+        if isinstance(options, (str, dict)):    
+            if isinstance(options, str):
+             self.options = json.loads(options)
+        else:
+            self.options = options
+    
     def init(self):
         try:
             switch = {

@@ -42,7 +42,6 @@ class DesignElement(Base):
       # Atributos:
       id = Column(Integer, primary_key=True, index=True)
       campaign_id = Column(Integer, ForeignKey("campaigns.id"), nullable=False)
-      name = Column(String(), nullable=False)
       service = Column(String(), nullable=False)
       number = Column(String(), nullable=False)
       language = Column(String(), nullable=False)

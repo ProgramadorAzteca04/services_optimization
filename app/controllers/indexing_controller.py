@@ -8,7 +8,7 @@ load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 
-def indexing_controller(campaign_id: int, link_page: str, service: dict = None):
+def indexing_controller(campaign_id: int, link_page: str, service: dict):
     """
     Registra una URL en la tabla 'indexing' para la campaña indicada.
     Si se pasa 'service', puede usarse para personalizar la lógica.
@@ -43,8 +43,9 @@ def indexing_controller(campaign_id: int, link_page: str, service: dict = None):
 
             session.add(new_index)
             session.commit()
+            print(f" service recibido: {service} | tipo: {type(service)}")
             if service:
-                print(f" Registro insertado en indexing para servicio '{service.get('name')}' en campaña {campaign_id}")
+                print(f" Registro insertado en indexing para servicio '{service["name"]}' en campaña {campaign_id}")
             else:
                 print(f" Registro insertado en indexing para campaña {campaign_id}")
 

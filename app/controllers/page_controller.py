@@ -8,7 +8,7 @@ import json
 
 def get_website_info(
     id: int,
-    service: dict,
+    campaign_id: int,
     title_seo: str,
     meta_description: str,
     key_phrase: str,
@@ -23,37 +23,33 @@ def get_website_info(
             name = campaign["name"]
             break
 
-    return get_design(
-        id,
-        service,
-        title_seo,
-        meta_description,
-        name,
-        key_phrase,
-        url,
-        reviews,
-        blocks,
-    )
+    return json.dumps(get_design(
+          id,
+          campaign_id,
+          title_seo,
+          meta_description,
+          key_phrase,
+          url,
+          reviews,
+          blocks,
+            ))
 
 
 def create_page(
     id: int,
-    service: dict,
+    campaign_id: int,
     title_seo: str,
     meta_description: str,
     key_phrase: str,
     reviews: int,
     blocks: list,
     url: str,
-    result = None,
-
-
-    
 ):
+    result = {"status": "error", "message": "Error desconocido"}
     try:
         website_info = get_website_info(
             id,
-            service,
+            campaign_id,
             title_seo,
             meta_description,
             key_phrase,
@@ -62,7 +58,10 @@ def create_page(
             blocks,
         )
         design_data = json.loads(website_info)
-        init_layout = InitLayout(design_data)
+        init_layout = InitLayout(design_data).init()  # ✅ ahora sí ejecuta el método
+
+
+        result = {"status": "error", "message": "Error desconocido"}
 
         try:
             with sync_playwright() as p:
@@ -78,7 +77,7 @@ def create_page(
 
                 wordpress_component = WordpressComponent(page, design_data)
                 result = wordpress_component.dates_wordpress(
-                    reviews, url, init_layout, design_data, meta_description, id
+                    reviews, url, init_layout, meta_description,campaign_id
                 )
 
                 if result["status"] == "ok":

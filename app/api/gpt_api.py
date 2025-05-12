@@ -13,9 +13,9 @@ class GPT:
         self.client = OpenAI()
         self.design_data = design_data
         self.service = str(design_data.get("service")).title()
-        self.campaign = str(design_data.get("campaign"))
+        self.campaign = str(design_data.get("campaign") or "")
         self.city = str(design_data.get("city")).title()
-        self.state = str(design_data.get("state").capitalize()).title()
+        self.state = str(design_data.get("state") or "").capitalize().title()
         self.language = design_data.get("language")
         self.key_phrase = str(design_data.get("key_phrase")).title()
         # self.links = design_data.get("links")

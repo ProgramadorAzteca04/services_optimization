@@ -1,6 +1,7 @@
 from sqlalchemy.exc import NoResultFound
 from app.config import local_session
 from app.models import DesignElement
+from fastapi import HTTPException
 import json
 
 
@@ -27,19 +28,19 @@ def get_designs() -> list[DesignElement] | list:
 
 
 def get_design(
-    campaign_id: int,
+    id: int,
+    campaign: int,
     title_seo: str,
     meta_description: str,
-    campaign: str,
     key_phrase: str,
     url: str,
     reviews: int,
-    blocks: dict,
+    blocks: list,
 ) -> str:
     try:
         with local_session() as session:
             design = (
-                session.query(DesignElement).filter_by(campaign_id=campaign_id).first()
+                session.query(DesignElement).filter_by(campaign_id=campaign).first()
             )
             if design:
                 design_data = {
@@ -65,9 +66,9 @@ def get_design(
                     "meta": design.meta,
                     "channel_id": design.channel_id,
                 }
-                return json.dumps(design_data)
+                return design_data
             else:
-                return json.dumps([]), 404
+                raise HTTPException(status_code=404, detail="No se encontró el diseño solicitado")
     except NoResultFound:
         print("Error al obtener el elemento de diseño")
         return json.dumps([]), 404

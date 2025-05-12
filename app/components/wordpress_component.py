@@ -5,7 +5,7 @@ from app.utilities.wordpress_utilities import insert_wordpress_data, delete_temp
 from app.controllers.form_controller import perform_login
 from app.components import InitLayout
 from app.api import GPT
-from app.controllers.indexing_controller import indexing_controller
+#from app.controllers.indexing_controller import indexing_controller
 
 load_dotenv()
 
@@ -25,24 +25,21 @@ class WordpressComponent:
         url: str,
         init_layout: InitLayout,
         meta_description: str,
-        id: int,
+        campaign_id: int,
     ):
-        print(f" Iniciando flujo para servicio: {self.service.get('name', 'Genérico') if self.service else 'Sin servicio'}")
-
         perform_login(
             self.page,
-            self.design_data["campaign"],
-            self.design_data["layout"],
+            self.design_data(["campaign"]), 
             url,
-            init_layout,
-            self.design_data,
-        )
+            self.design_data             
+             )
+
 
         frase_clave = self.design_data["key_phrase"].replace(",", "")
 
         # Título SEO según contexto
         if self.service:
-            title_seo = f"{self.service['name']} - Expertos en tu zona"
+            title_seo = f"{self.service['name']}"
         else:
             title_seo = self.gpt.title_seo()
 
@@ -54,8 +51,6 @@ class WordpressComponent:
             reviews,
             service=self.service
         )
-
-        delete_template(self.page, filtro=self.service.get("slug", "") if self.service else "")
-
+        delete_template(self.page, filtro=self.service if self.service else "")
         #  Indexación con servicio incluido
-        indexing_controller(id, url, service=self.service)
+       # indexing_controller(id, url, service=self.service)

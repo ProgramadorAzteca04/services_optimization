@@ -7,6 +7,8 @@ from .json_controller import (
 
 from .domain_controller import get_domain
 from .page_controller import get_website_info
+from .page_controller import create_page
+
 
 __all__ = [
     "load_json_file",

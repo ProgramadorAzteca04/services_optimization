@@ -1,6 +1,6 @@
 import json
 import os
-from typing import List, Dict
+from typing import List
 from app.controllers import create_page
 from fastapi import APIRouter, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
@@ -14,21 +14,16 @@ from app.controllers.scheduled_controller import (
     delete_scheduled_campaign,
     get_scheduled_campaigns,
 )
+from typing import List
 from app.utilities import massive_creation, process_excel
 from app.utilities.utils import change_hour, programming_hour
 
 router = APIRouter()
-
-
 class CampaignData(BaseModel):
     id: int
-    city: str
-    services: str
-    name: str
-    slug: str
+    campaign_id: int
     title_seo: str
     meta_description: str
-    state: str
     key_phrase: str
     url: str
     review: int  #  <- aquí debe ser review (sin "s")
@@ -48,11 +43,9 @@ def new_campaign(data: CampaignData):
     try:
         result = create_page(
             data.id,
-            data.city,
-            data.services,
+            data.campaign_id,
             data.title_seo,
             data.meta_description,
-            data.state,
             data.key_phrase,
             int(data.review),
             data.blocks,
@@ -135,35 +128,16 @@ async def download_report():
     return FileResponse(ruta, filename="report.xlsx")
 
 
-@router.get("/services/{campaign_id}")
-async def get_services(campaign_id: int):
-    try:
-        services = get_services_by_campaign(campaign_id)
-        if not services:
-            raise HTTPException(status_code=404, detail="No se encontraron servicios")
-        return services
-    except Exception as e:
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error interno: {str(e)}",
-        )
-    
-@router.post("/new_campaign")
+@router.post("/services")
 def new_campaign(data: CampaignData):
     try:
-        print(" JSON recibido:", data)
-        print(" Llamando a create_page con:")
-        print(data.id, data.city, data.name, data.slug, data.name, data.title_seo, data.meta_description)
-        
+        print("📥 Datos recibidos:", data)
+
         result = create_page(
             data.id,
-            data.city,
-            data.services,
-            data.name,
-            data.slug,
+            data.campaign_id,
             data.title_seo,
             data.meta_description,
-            data.state,
             data.key_phrase,
             int(data.review),
             data.blocks,
@@ -174,5 +148,3 @@ def new_campaign(data: CampaignData):
         raise e
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-        
- 
