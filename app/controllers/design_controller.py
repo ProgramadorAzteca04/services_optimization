@@ -30,20 +30,20 @@ def get_design(
     campaign_id: int,
     title_seo: str,
     meta_description: str,
-    campaign: str,
     key_phrase: str,
     url: str,
     reviews: int,
-    blocks: dict,
+    blocks: list,
 ) -> str:
     try:
         with local_session() as session:
             design = (
-                session.query(DesignElement).filter_by(campaign_id=campaign_id).first()
+                session.query(DesignElement)
+                .filter_by(campaign_id=campaign_id)
+                .first()
             )
             if design:
                 design_data = {
-                    "id": design.id,
                     "service": design.service,
                     "number": design.number,
                     "language": design.language,
@@ -53,7 +53,6 @@ def get_design(
                     "url": url,
                     "reviews": reviews,
                     "blocks": blocks,
-                    "campaign": campaign,
                     "title_seo": title_seo,
                     "meta_description": meta_description,
                     "key_phrase": key_phrase,
@@ -67,10 +66,11 @@ def get_design(
                 }
                 return json.dumps(design_data)
             else:
-                return json.dumps([]), 404
+                return json.dumps({"error": "DesignElement no encontrado"})
     except NoResultFound:
-        print("Error al obtener el elemento de diseño")
-        return json.dumps([]), 404
+        print("No se encontró el elemento de diseño con campaign_id.")
+        return json.dumps({"error": "No se encontró el DesignElement"})
     except Exception as e:
         print(f"Error al obtener el elemento de diseño: {e}")
-        return json.dumps([]), 500
+        return json.dumps({"error": f"Error interno: {str(e)}"})
+

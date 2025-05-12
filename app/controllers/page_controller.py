@@ -1,93 +1,113 @@
-from playwright.sync_api import sync_playwright
-from .campaign_controller import get_campaigns
-from .design_controller import get_design
-from app.components import WordpressComponent
-from app.components import InitLayout
-import json
+# app/controllers/page_controller.py
 
+import json
+from playwright.sync_api import sync_playwright
+from fastapi import HTTPException
+
+from app.controllers.design_controller import get_design
+from app.components.init_layout_component import InitLayout
+from app.utilities.wordpress_utilities import save_template, go_to_page_section
 
 def get_website_info(
-    id: int,
-    service: dict,
+    campaign_id: int,
     title_seo: str,
     meta_description: str,
     key_phrase: str,
     url: str,
     reviews: int,
     blocks: list,
-):
-    campaign_list = json.loads(get_campaigns())
-
-    for campaign in campaign_list:
-        if campaign["id"] == id:
-            name = campaign["name"]
-            break
-
+) -> str:
     return get_design(
-        id,
-        service,
+        campaign_id,
         title_seo,
         meta_description,
-        name,
         key_phrase,
         url,
         reviews,
         blocks,
     )
 
-
 def create_page(
-    id: int,
-    service: dict,
+    campaign_id: int,
     title_seo: str,
     meta_description: str,
     key_phrase: str,
     reviews: int,
     blocks: list,
     url: str,
-):
+) -> dict:
+    # 1. Obtener diseño
+    website_info = get_website_info(
+        campaign_id,
+        title_seo,
+        meta_description,
+        key_phrase,
+        url,
+        reviews,
+        blocks,
+    )
     try:
-        website_info = get_website_info(
-            id,
-            service,
-            title_seo,
-            meta_description,
-            key_phrase,
-            url,
-            reviews,
-            blocks,
-        )
         design_data = json.loads(website_info)
-        init_layout = InitLayout(design_data)
-
-        try:
-            with sync_playwright() as p:
-                browser = p.chromium.launch(
-                    headless=False,
-                    args=[
-                        "--window-size=1524, 968",
-                        "--force-device-scale-factor=0.64",
-                    ],
-                )
-                page = browser.new_page()
-                page.set_viewport_size({"width": 1524, "height": 968})
-
-                wordpress_component = WordpressComponent(page, design_data)
-                result = wordpress_component.dates_wordpress(
-                    reviews, url, init_layout, design_data, meta_description, id
-                )
-
-                if result["status"] == "ok":
-                    page.evaluate("alert('Pagina creada')")
-                else:
-                    page.evaluate("alert('Error al crear la pagina')")
-
-                browser.close()
-
-        except Exception as e:
-            print(f"Error al crear la pagina: {e}")
-
     except Exception as e:
-        print(f"Error al obtener la información de la pagina: {e}")
+        raise HTTPException(status_code=500, detail=f"JSON inválido: {e}")
+    if "error" in design_data:
+        raise HTTPException(status_code=500, detail=design_data["error"])
 
-    return result
+    design_data["campaign"] = campaign_id
+    init_layout = InitLayout(design_data)
+
+    try:
+        # 2. Iniciar Playwright
+        playwright = sync_playwright().start()
+        try:
+            browser = playwright.chromium.launch(
+                headless=False,
+                args=["--window-size=1524,968", "--force-device-scale-factor=0.64"],
+            )
+            page = browser.new_page()
+            page.set_viewport_size({"width": 1524, "height": 968})
+
+            # --- Nuevo flujo: primero vamos a la página pública ---
+            page.goto(url)
+
+            # 3. Import dinámico para evitar circularidad
+            from app.controllers.form_controller import perform_login
+            from app.components.wordpress_component import WordpressComponent
+
+            # 4. Hacer login y recuperar dominio
+            domain = perform_login(page, campaign_id, url, design_data)
+            if not domain:
+                raise Exception("No se obtuvo dominio tras login")
+
+            # 5. Guardar plantilla en Elementor
+            template_name = str(design_data["campaign"]).lower().replace(" ", "_")
+            template_file = f"app/layouts/{template_name}.json"
+            save_template(
+                page,
+                template_file,
+                domain,          # dominio correcto
+                url,
+                init_layout,
+                design_data
+            )
+
+            # 6. Navegar a la sección de edición
+            go_to_page_section(page, domain)
+
+            # 7. Publicar contenido y limpiar
+            wp = WordpressComponent(page, design_data)
+            wp.dates_wordpress(
+                reviews,
+                url,
+                init_layout,
+                meta_description,
+                campaign_id
+            )
+
+            browser.close()
+        finally:
+            playwright.stop()
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+    return {"status": "ok", "message": "Página creada exitosamente"}
