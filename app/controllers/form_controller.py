@@ -95,10 +95,10 @@ def get_template(page: Page, link: str, file_name: str):
     page.wait_for_timeout(15000)
 
     try:
-        print("Nombrando plantilla como Base optimizada")
+        print("Nombrando plantilla como Base Servicios")
         page.fill(
             "//input[@id='elementor-template-library-save-template-name']",
-            "Base optimizada",
+            "Base Servicios",
         )
     except Exception as e:
         print(f"Error al nombrar la plantilla: {e}")
@@ -139,7 +139,7 @@ def get_template(page: Page, link: str, file_name: str):
             print(" Error al obtener el nombre del template:", e)
             continue
 
-        if str(text_name).lower() == "base optimizada":
+        if str(text_name).lower() == "base servicios":
             try:
                 more_actions = element.query_selector(
                     "//div[span[text()='More actions']] or //div[span[text()='Más acciones']]"

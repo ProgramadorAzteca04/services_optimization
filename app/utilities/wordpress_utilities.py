@@ -223,7 +223,7 @@ def insert_wordpress_data(
         encontrada = False
         for element in elements:
             name = element.query_selector(".elementor-template-library-template-name")
-            if name and "base optimizada" in name.inner_text().lower():
+            if name and "base servicios" in name.inner_text().lower():
                 insert_button = element.query_selector(
                     ".elementor-template-library-template-insert"
                 )
@@ -232,7 +232,7 @@ def insert_wordpress_data(
                 break
 
         if not encontrada:
-            raise Exception("Plantilla 'base optimizada' no encontrada")
+            raise Exception("Plantilla 'base servicios' no encontrada")
 
         try:
             apply_button = page.wait_for_selector(
@@ -311,7 +311,7 @@ def delete_template(page: Page):
             try:
                 # Localiza título por XPath con locator
                 titulo = fila.locator(
-                    "xpath=.//td[@data-colname='Título' or @data-colname='Title']//a[contains(text(), 'Base optimizada')]"
+                    "xpath=.//td[@data-colname='Título' or @data-colname='Title']//a[contains(text(), 'Base servicios')]"
                 )
 
                 if titulo.count() > 0:
@@ -326,7 +326,7 @@ def delete_template(page: Page):
                     except Exception as e:
                         print(f"Error al marcar el checkbox: {e}")
                 else:
-                    print("No se encontró el título 'Base optimizada' en esta fila.")
+                    print("No se encontró el título 'Base servicios' en esta fila.")
 
             except PlaywrightTimeoutError:
                 print("Timeout esperando el título en esta fila, se omite.")
@@ -443,10 +443,10 @@ def get_template(page: Page, link: str, design_data: dict):
     page.wait_for_timeout(5000)
 
     try:
-        print("Nombrando plantilla como Base optimizada")
+        print("Nombrando plantilla como Base servicios")
         page.fill(
             "//input[@id='elementor-template-library-save-template-name']",
-            "Base optimizada",
+            "Base servicios",
         )
         page.wait_for_timeout(5000)
     except Exception as e:
@@ -498,7 +498,7 @@ def get_template(page: Page, link: str, design_data: dict):
         name = element.query_selector(".elementor-template-library-template-name")
         text_name = name.inner_text() if name else ""
 
-        if "base optimizada" in text_name.lower():
+        if "base servicios" in text_name.lower():
             try:
                 selector = (
                     "(//div[@class='elementor-template-library-template-more-toggle'])"
