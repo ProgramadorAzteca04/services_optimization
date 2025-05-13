@@ -10,10 +10,10 @@ class EliteChicagoSpa:
 
     def run(self):
         services = {
-            "botox": BotoxChicago,
-            "facials": FacialsChicago,
-            "coolsculpting": CoolsculptingChicago,
-            "laser": LaserHairRemovalChicago,
+            "botox-chicago": BotoxChicago,
+            "facials-chicago": FacialsChicago,
+            "coolsculpting-in-chicago": CoolsculptingChicago,
+            "laser-hair-removal": LaserHairRemovalChicago,
         }
 
         service_class = services.get(self.service)

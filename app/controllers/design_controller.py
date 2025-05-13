@@ -47,9 +47,9 @@ def get_design(
             if design:
                 design_data = {
                     "campaign_id": design.campaign_id,
-                   "service": {
-                    "service_name": design.service,
-                    "service_slug": design.service.lower().replace(" ", "-")
+                    "service": {
+                        "service_name": design.service,
+                        "service_slug": design.service.lower().replace(" ", "-")
                     },
                     "number": design.number,
                     "language": design.language,
@@ -79,4 +79,3 @@ def get_design(
     except Exception as e:
         print(f"Error al obtener el elemento de diseño: {e}")
         return json.dumps({"error": f"Error interno: {str(e)}"})
-

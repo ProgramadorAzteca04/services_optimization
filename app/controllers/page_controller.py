@@ -83,7 +83,7 @@ def create_page(
             # 5. Guardar plantilla en Elementor
             template_name = str(
                 design_data["alt_name"]).lower().replace(" ", "_")
-            template_file = f"app/layouts/{template_name}.json"
+            template_file = f"app/layouts/{design_data['service']}/{template_name}.json"
             save_template(
             page,
             template_file,

@@ -482,10 +482,10 @@ def get_template(page: Page, link: str, design_data: dict):
     except Exception as e:
         print(e)
 
-    file_name = design_data.get("campaign_id").replace(" ", "_").lower() + ".json"
-
+    file_name = design_data.get("alt_name").replace(" ", "_").lower() + ".json"
     complete_path = Path(template_path) / file_name
     print(complete_path)
+    
 
     if complete_path.exists():
         print(f"La plantilla ya existe Eliminando {complete_path}")
