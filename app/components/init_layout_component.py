@@ -5,7 +5,6 @@ from app.components.elite_chicago_spa.init_elite_chicago_spa import EliteChicago
 class InitLayout:
     def __init__(self, options: dict):
         self.options = options
-        print(f"[DEBUG] Type of options: {type(self.options)}")
 
         if isinstance(options, (str, dict)):    
             if isinstance(options, str):

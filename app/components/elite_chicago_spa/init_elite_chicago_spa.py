@@ -6,7 +6,9 @@ from app.components.elite_chicago_spa.laser_hair_removal_in_chicago import Laser
 class EliteChicagoSpa:
     def __init__(self, options: dict):
         self.options = options
-        self.service = options.get("service")
+        self.service = self.service = options.get("service", {}).get("services_slug", "").replace("-in-chicago", "")
+        
+
 
     def run(self):
         services = {
@@ -19,6 +21,7 @@ class EliteChicagoSpa:
         service_class = services.get(self.service)
         if not service_class:
             raise Exception(f"Servicio '{self.service}' no está registrado en EliteChicagoSpa")
+        print(f"Servicio '{self.service}' no está registrado en EliteChicagoSpa")
 
         service_instance = service_class(self.options)
         for block in self.options["blocks"]:

@@ -2,8 +2,6 @@ import os
 import shutil
 
 from playwright.sync_api import Page
-from app.utilities.wordpress_utilities import go_to_page_section, login, save_template
-from app.components.init_layout_component import InitLayout
 from app.config import local_session
 from app.models.campaign import Campaign
 from app.models.domain import Domain

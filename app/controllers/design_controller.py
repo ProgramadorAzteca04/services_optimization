@@ -92,6 +92,7 @@ def get_design(
         }
 
         print("✅ Servicio detectado:", service)
+        print("✅ Elemento de diseño obtenido:", design_data)
         return json.dumps(design_data)
 
     except Exception as e:

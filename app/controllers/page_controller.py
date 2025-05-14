@@ -15,7 +15,7 @@ def get_website_info(
     url: str,
     reviews: int,
     blocks: list,
-) -> str:
+):
     return get_design(
         campaign_id,
         title_seo,
@@ -35,7 +35,7 @@ def create_page(
     reviews: int,
     blocks: list,
     url: str,
-) -> dict:
+):
     # 1. Obtener diseño
     website_info = get_website_info(
         campaign_id,
@@ -87,10 +87,10 @@ def create_page(
             save_template(
             page,
             template_file,
-            domain,        # 3. dominio base como string
-            url,           # 4. url de la página pública
-            init_layout,   # 5. layout inicial generado
-            design_data    # 6. data JSON del diseño
+            domain,        
+            url,           
+            init_layout,  
+            design_data
             )
 
  

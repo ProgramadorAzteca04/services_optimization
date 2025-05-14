@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import os
 from datetime import datetime
 from pathlib import Path
@@ -6,8 +8,10 @@ from dotenv import load_dotenv
 from playwright.sync_api import Page
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
-
 from .report_utilities import export_report
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from app.components.init_layout_component import InitLayout
 
 load_dotenv()
 
@@ -298,7 +302,6 @@ def insert_wordpress_data(
 
     return {"status": "ok", "url": new_page, "reporte": error_report, "code": 200}
 
-
 def delete_template(page: Page):
     try:
         filas = page.locator("//tbody[@id='the-list']/tr")
@@ -346,16 +349,18 @@ def delete_template(page: Page):
     except Exception as e:
         print(f"Error al ejecutar acción masiva: {e}")
 
+    page.wait_for_timeout(2000)
 
 def save_template(
     page: Page,
     template_file: str,
     domain: str,
     url: str,
-    init_layout,
+    init_layout: InitLayout,
     design_data: dict,
 ):
 
+    
     template_url = (
           f"{domain.rstrip('/')}/wp-admin/edit.php?post_type=elementor_library&tabs_group=library"
     )
