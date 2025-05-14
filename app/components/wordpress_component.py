@@ -12,10 +12,9 @@ API_URL = os.getenv("API_URL")
 META_FOLDER = os.getenv("META_FOLDER")
 
 class WordpressComponent:
-    def __init__(self, page: Page, design_data: dict, service: dict = None):
+    def __init__(self, page: Page, design_data: dict):
         self.page = page
         self.design_data = design_data
-        self.service = service
 
     def dates_wordpress(
         self,
@@ -27,7 +26,7 @@ class WordpressComponent:
     ):
         print(
             " Iniciando flujo para servicio: "
-            + (self.service.get("name") if self.service else "Sin servicio")
+            + (self.design_data.get("services_name") if self.service else "Sin servicio")
         )
 
         # Import local para romper import circular
@@ -36,7 +35,7 @@ class WordpressComponent:
         # 1. Login en WP
         perform_login(
             self.page,
-            self.design_data["campaign"],  # campaign_id (int)
+            self.design_data["campaign_id"],  # campaign_id (int)
             url,                            # URL pública de la página
             self.design_data               # todo el dict de diseño
         )

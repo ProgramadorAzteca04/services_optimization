@@ -9,7 +9,7 @@ from app.controllers import (
 
 from app.utilities.utils import choose_random_link
 
-json_file = "app/components/elite_chicago_spa/laser_hair_removal_in_chicago.json"
+json_file = "app/layouts/elite_chicago_spa/laser-hair-removal-in-chicago.json"
 links = [
     {
         "url": "https://www.elitechicagospa.com/laser-hair-removal-in-chicago/",

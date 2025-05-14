@@ -253,7 +253,7 @@ def insert_wordpress_data(
     except Exception as e:
         return write_error_and_exit("insertar_plantilla_elementor", e)
 
-    page.wait_for_timeout(60000)
+    page.wait_for_timeout(6000)
 
     try:
         print("Publicando...")
@@ -419,7 +419,7 @@ def get_template(page: Page, link: str, design_data: dict):
         page.click(
             "//span[normalize-space()='Edit with Elementor' or normalize-space()='Editar con Elementor']"
         )
-        page.wait_for_timeout(60000)
+        page.wait_for_timeout(6000)
     except Exception as e:
         print(f"Error al ir a Elementor: {e}")
 
@@ -489,13 +489,13 @@ def get_template(page: Page, link: str, design_data: dict):
 
     # Asegura ruta base con valor por defecto
     template_path = os.getenv("TEMPLATE_PATH", "app/layouts/")
-    
+
     # Nombre de carpeta por campaña
     folder_name = design_data["alt_name"].replace(" ", "_").lower()
-    
+
     # Nombre de archivo por servicio
     file_name = design_data["service"]["services_slug"] + ".json"
-    
+
     # Ruta completa
     complete_path = Path(template_path) / folder_name / file_name
 

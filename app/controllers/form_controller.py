@@ -8,6 +8,7 @@ from app.models.domain import Domain
 
 
 
+
 # Perform login function
 def perform_login(
     page: Page,
@@ -63,7 +64,7 @@ def get_template(page: Page, link: str, file_name: str, design_data: dict):
     page.reload()
     page.wait_for_timeout(10000)
     print("Recargado")
-    page.wait_for_timeout(60000)
+    page.wait_for_timeout(6000)
     try:
         print("Yendo a Elementor...")
         page.wait_for_selector(
