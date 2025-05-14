@@ -21,4 +21,5 @@ __all__ = [
     "get_domain",
     "find_element",
     "get_website_info",
+    "create_page",
  ]

@@ -24,8 +24,8 @@ class Services(Base):
       __tablename__ = "services"
       id = Column(Integer, primary_key=True)
       campaign_id = Column(Integer, ForeignKey("campaigns.id"))
-      service_name = Column(String(), nullable=False)
-      service_slug = Column(String(), nullable=False)
+      services_name = Column(String(), nullable=False)
+      services_slug = Column(String(), nullable=False)
 
       campaign = relationship("Campaign", back_populates="services")
 
@@ -33,8 +33,8 @@ class Services(Base):
         return {
             "id": self.id,
             "campaign_id": self.campaign_id,
-            "service_name": self.service_name,
-            "service_slug": self.service_slug
+            "services_name": self.services_name,
+            "services_slug": self.services_slug
         }
       def __init__(self, campaign_id, service_name, service_slug):
               self.campaign_id = campaign_id
