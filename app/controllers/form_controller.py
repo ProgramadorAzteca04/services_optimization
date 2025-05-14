@@ -55,8 +55,7 @@ def perform_login(
 
 
 # Obtener y guardar la plantilla desde Elementor
-def get_template(page: Page, link: str, file_name: str):
-    DOWNLOAD_PATH = "app/layouts/"
+def get_template(page: Page, link: str, file_name: str, design_data: dict):
     print("Obteniendo plantilla")
     page.goto(link)
     page.wait_for_timeout(10000)
@@ -149,8 +148,19 @@ def get_template(page: Page, link: str, file_name: str):
                 print("Error al abrir acciones:", e)
 
             try:
-                # Construimos la ruta completa
-                path_final = os.path.join(DOWNLOAD_PATH, file_name)
+                # Extraer información limpia desde design_data
+                template_path = design_data["alt_name"].replace(" ", "_").lower()
+                file_name = design_data["service"]["services_slug"] + ".json"
+
+                # Ruta completa: app/layouts/<template_path>/<services_slug>.json
+                download_path = os.path.join("app/layouts", template_path)
+
+                # Asegurar que la carpeta exista
+                os.makedirs(download_path, exist_ok=True)
+
+                # Ruta final del archivo
+                path_final = os.path.join(download_path, file_name)
+
 
                 # Eliminamos si ya existe
                 if os.path.exists(path_final):
