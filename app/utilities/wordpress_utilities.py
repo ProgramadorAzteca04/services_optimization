@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 load_dotenv()
 
-template_path = os.getenv("TEMPLATE_PATH")
+template_path = os.getenv("TEMPLATE_PATH", "app/layouts/")
 print(template_path)
 
 
@@ -487,9 +487,18 @@ def get_template(page: Page, link: str, design_data: dict):
     except Exception as e:
         print(e)
 
-    template_path += design_data["alt_name"].replace(" ", "_").lower()
+    # Asegura ruta base con valor por defecto
+    template_path = os.getenv("TEMPLATE_PATH", "app/layouts/")
+    
+    # Nombre de carpeta por campaña
+    folder_name = design_data["alt_name"].replace(" ", "_").lower()
+    
+    # Nombre de archivo por servicio
     file_name = design_data["service"]["services_slug"] + ".json"
-    complete_path = Path(template_path) / file_name
+    
+    # Ruta completa
+    complete_path = Path(template_path) / folder_name / file_name
+
     print(complete_path)
     
 
