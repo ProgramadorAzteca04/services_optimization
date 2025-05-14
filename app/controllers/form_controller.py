@@ -30,8 +30,8 @@ def perform_login(
             raise Exception(f"Dominio para campaña {campaign_id} no configurado")
 
         # --- 1) Preparar dominio y URL de login ---
-        domain = domain_info.domain.rstrip("/")
-        login_url = f"{domain}/wp-login.php"
+        domain = domain_info.domain
+        login_url = f"{domain}wp-login.php"
 
         # --- 2) Ir a la página de login y esperar al formulario ---
         page.goto(login_url)

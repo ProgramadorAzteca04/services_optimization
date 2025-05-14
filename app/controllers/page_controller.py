@@ -97,7 +97,7 @@ def create_page(
 
  
             # 6. Navegar a la sección de edición
-            go_to_page_section(page, url)
+            go_to_page_section(page, domain)
  
             # 7. Publicar contenido y limpiar
             wp = WordpressComponent(page, design_data)

@@ -6,7 +6,7 @@ from app.components.elite_chicago_spa.laser_hair_removal_in_chicago import Laser
 class EliteChicagoSpa:
     def __init__(self, options: dict):
         self.options = options
-        self.service = options.get("service", {}).get("services_slug", "").replace("-in-chicago", "")
+        self.service = options.get("service", {}).get("services_slug", "")
 
 
     def run(self):
