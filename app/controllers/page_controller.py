@@ -81,9 +81,11 @@ def create_page(
                 raise Exception("No se obtuvo dominio tras login")
  
             # 5. Guardar plantilla en Elementor
-            template_name = str(
+            campaign = str(
                 design_data["alt_name"]).lower().replace(" ", "_")
-            template_file = f"app/layouts/{design_data['service']}/{template_name}.json"
+            service = design_data["service"]
+            template = service.get("services_slug")
+            template_file = f"app/layouts/{campaign}/{template}.json"
             save_template(
             page,
             template_file,

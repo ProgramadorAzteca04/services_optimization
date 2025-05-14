@@ -10,7 +10,7 @@ class EliteChicagoSpa:
 
 
     def run(self):
-        services = {
+        service = {
             "botox-chicago": BotoxChicago,
             "facials-chicago": FacialsChicago,
             "coolsculpting-in-chicago": CoolsculptingChicago,
@@ -18,9 +18,9 @@ class EliteChicagoSpa:
         }
 
         print(f"[DEBUG] slug recibido: {self.service}")
-        print(f"[DEBUG] servicios disponibles: {list(services.keys())}")
+        print(f"[DEBUG] servicios disponibles: {list(service.keys())}")
 
-        service_class = services.get(self.service)
+        service_class = service.get(self.service)
         if not service_class:
             raise Exception(f"Servicio '{self.service}' no está registrado en EliteChicagoSpa")
 

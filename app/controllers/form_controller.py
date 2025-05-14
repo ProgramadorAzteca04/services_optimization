@@ -150,7 +150,9 @@ def get_template(page: Page, link: str, file_name: str, design_data: dict):
             try:
                 # Extraer información limpia desde design_data
                 template_path = design_data["alt_name"].replace(" ", "_").lower()
-                file_name = design_data["service"]["services_slug"] + ".json"
+                service = design_data["services"]
+                template_name = service["services_slug"]
+                file_name = f"{template_name}" + ".json"
 
                 # Ruta completa: app/layouts/<template_path>/<services_slug>.json
                 download_path = os.path.join("app/layouts", template_path)
@@ -183,8 +185,6 @@ def get_template(page: Page, link: str, file_name: str, design_data: dict):
 
             except Exception as e:
                 print("Error en la descarga o movimiento del archivo:", e)
-
-            break
 
 
 def delete_old_template(page: Page, ulr: str):

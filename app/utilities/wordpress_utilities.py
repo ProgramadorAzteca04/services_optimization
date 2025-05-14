@@ -487,7 +487,7 @@ def get_template(page: Page, link: str, design_data: dict):
     except Exception as e:
         print(e)
 
-    template_path =+ design_data["alt_name"].replace(" ", "_").lower()
+    template_path += design_data["alt_name"].replace(" ", "_").lower()
     file_name = design_data["service"]["services_slug"] + ".json"
     complete_path = Path(template_path) / file_name
     print(complete_path)
