@@ -195,6 +195,7 @@ def insert_wordpress_data(
         print("Cambiar a iframe...")
         iframe_element = page.wait_for_selector("iframe")
         frame = iframe_element.content_frame()
+        frame.wait_for_timeout(5000)
         frame.click(".elementor-add-section-area-button.elementor-add-template-button")
 
         print("Click en plantillas...")
@@ -257,7 +258,7 @@ def insert_wordpress_data(
 
     try:
         print("Publicando...")
-
+        page.wait_for_timeout(10000)
         page.keyboard.press("Control+S")
         page.wait_for_timeout(90000)
         error_report.append(
