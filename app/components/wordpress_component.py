@@ -15,6 +15,7 @@ class WordpressComponent:
     def __init__(self, page: Page, design_data: dict):
         self.page = page
         self.design_data = design_data
+        self.service = design_data.get("service")
 
     def dates_wordpress(
         self,
