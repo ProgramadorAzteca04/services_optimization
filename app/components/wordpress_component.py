@@ -5,6 +5,7 @@ import os
 from playwright.sync_api import Page
 from app.utilities.wordpress_utilities import insert_wordpress_data, delete_template
 from app.components.init_layout_component import InitLayout
+from app.api.gpt_api import GPT
 
 load_dotenv()
 
@@ -16,6 +17,7 @@ class WordpressComponent:
         self.page = page
         self.design_data = design_data
         self.service = design_data.get("service")
+        self.gpt = GPT(design_data)
 
     def dates_wordpress(
         self,
@@ -25,27 +27,28 @@ class WordpressComponent:
         meta_description: str,
         _id: int,
     ):
-        print(
-            " Iniciando flujo para servicio: "
-            + (self.design_data.get("services_name") if self.service else "Sin servicio")
-        )
+        print("🟢 Iniciando flujo para servicio:", self.service.get("services_name", "Sin servicio"))
+
 
         # Import local para romper import circular
         from app.controllers.form_controller import perform_login
 
-        # 1. Login en WP
-        perform_login(
-            self.page,
-            self.design_data["campaign_id"],  # campaign_id (int)
-            url,                            # URL pública de la página
-            self.design_data               # todo el dict de diseño
-        )
+        try:
+            self.page.wait_for_selector("#adminmenu", timeout=5000)
+            print("🟢 Ya estoy logueado en WP")
+        except Exception:
+            # 1. Login en WP
+            perform_login(
+                self.page,
+                self.design_data["campaign_id"],  # campaign_id (int)
+                url,                            # URL pública de la página
+                self.design_data               # todo el dict de diseño
+            )
 
         # 2. Preparar datos para insertar
         frase_clave = self.design_data["key_phrase"].replace(",", "")
-        title_seo   = (
-            self.service["name"] if self.service else str(self.design_data["campaign"])
-        )
+        title_seo = self.service.get("services_name", f"Campaña {self.design_data['campaign_id']}") #Se cambia para tomar el nombre del servicio en vez de la campaña
+
 
         # 3. Insertar contenido en WP
         insert_wordpress_data(
