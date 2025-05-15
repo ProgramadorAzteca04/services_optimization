@@ -5,8 +5,7 @@ from playwright.sync_api import Page
 from app.config import local_session
 from app.models.campaign import Campaign
 from app.models.domain import Domain
-
-
+from urllib.parse import urljoin
 
 
 # Perform login function
@@ -32,7 +31,7 @@ def perform_login(
 
         # --- 1) Preparar dominio y URL de login ---
         domain = domain_info.domain
-        login_url = f"{domain}wp-login.php"
+        login_url = urljoin(url, "/wp-login.php")
 
         # --- 2) Ir a la página de login y esperar al formulario ---
         page.goto(login_url)

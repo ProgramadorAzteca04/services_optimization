@@ -39,14 +39,14 @@ def get_design(
     blocks: list,
 ) -> str:
     try:
-        # 🟡 1. Extraemos el slug desde la URL
+        #  1. Extraemos el slug desde la URL
         parsed_url = urlparse(url)
         slug = parsed_url.path.strip("/").split("/")[-1]
 
-        # 🟡 2. Obtenemos los servicios de esa campaña
+        #  2. Obtenemos los servicios de esa campaña
         service_response = get_services_by_campaign(campaign_id)
 
-        # 🟡 3. Filtramos por slug
+        #  3. Filtramos por slug
         service = None
         if service_response["success"]:
             for s in service_response["data"]:
@@ -55,7 +55,7 @@ def get_design(
                     break
 
         if not service:
-            print("⚠️ No se encontró un servicio con slug:", slug)
+            print(" No se encontró un servicio con slug:", slug)
             return json.dumps({"error": f"Service con slug '{slug}' no encontrado en campaña {campaign_id}"})
 
         with local_session() as session:
@@ -64,7 +64,7 @@ def get_design(
         if not design:
             return json.dumps({"error": "DesignElement no encontrado"})
 
-        # 🟢 4. Usamos el servicio correcto
+        #  4. Usamos el servicio correcto
         design_data = {
             "campaign_id": design.campaign_id,
             "service": {
@@ -91,8 +91,8 @@ def get_design(
             "channel_id": design.channel_id,
         }
 
-        print("✅ Servicio detectado:", service)
-        print("✅ Elemento de diseño obtenido:", design_data)
+        print(" Servicio detectado:", service)
+        print(" Elemento de diseño obtenido:", design_data)
         return json.dumps(design_data)
 
     except Exception as e:
