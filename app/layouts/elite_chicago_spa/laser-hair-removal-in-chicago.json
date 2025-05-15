@@ -1,7 +1,7 @@
 {
     "content": [
         {
-            "id": "77bd9614",
+            "id": "2523bf93",
             "settings": {
                 "structure": "20",
                 "stretch_section": "section-stretched",
@@ -27,14 +27,14 @@
             },
             "elements": [
                 {
-                    "id": "276c7bd7",
+                    "id": "1aa0008f",
                     "settings": {
                         "_column_size": 50,
                         "_inline_size": 50.621
                     },
                     "elements": [
                         {
-                            "id": "6731cc99",
+                            "id": "23ce878a",
                             "settings": {
                                 "title": "Laser Hair Removal Chicago",
                                 "align": "center",
@@ -74,7 +74,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "3c0e23b7",
+                            "id": "8778383",
                             "settings": {
                                 "title": "Effortlessly Smooth, Always Ready\n",
                                 "align": "center",
@@ -98,7 +98,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "44325105",
+                            "id": "7ccdaac5",
                             "settings": {
                                 "editor": "<p data-start=\"184\" data-end=\"473\">Forget shaving and waxing\u2014<a href=\"https://elitechicagospa.com/\" target=\"_blank\" rel=\"noopener\">Elite Chicago Spa</a>\u00a0offers safe, effective laser hair removal for long-lasting smoothness on areas like the face, legs, underarms, bikini line, chest, and back. Our FDA-approved technology works on all skin tones with minimal discomfort and no downtime.</p><p data-start=\"475\" data-end=\"523\">Enjoy silky, stubble-free skin\u2014effortlessly.</p>"
                             },
@@ -108,11 +108,11 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "20271f59",
+                            "id": "25377484",
                             "settings": [],
                             "elements": [
                                 {
-                                    "id": "24d61254",
+                                    "id": "4b23ec34",
                                     "settings": {
                                         "container_type": "grid",
                                         "presetTitle": "Grid",
@@ -140,7 +140,7 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "368655eb",
+                                            "id": "38e97650",
                                             "settings": {
                                                 "text": "Book Now",
                                                 "typography_typography": "custom",
@@ -178,7 +178,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "2686a1d0",
+                                            "id": "4f5aa5b8",
                                             "settings": {
                                                 "text": " 312-841-9750",
                                                 "typography_typography": "custom",
@@ -228,7 +228,7 @@
                     "elType": "column"
                 },
                 {
-                    "id": "5df981f7",
+                    "id": "69e1e72a",
                     "settings": {
                         "_column_size": 50,
                         "_inline_size": 49.338,
@@ -236,7 +236,7 @@
                     },
                     "elements": [
                         {
-                            "id": "48de961c",
+                            "id": "5955f262",
                             "settings": {
                                 "youtube_url": "https://www.youtube.com/watch?v=KHH4G56ZT0g",
                                 "vimeo_url": "https://vimeo.com/235215203",
@@ -266,11 +266,11 @@
             "elType": "section"
         },
         {
-            "id": "c45729b",
+            "id": "733821aa",
             "settings": [],
             "elements": [
                 {
-                    "id": "57076e2c",
+                    "id": "6d1eca2c",
                     "settings": {
                         "image": {
                             "url": "https://elitechicagospa.com/wp-content/uploads/2020/03/ezgif.com-webp-to-jpg-1-1-e1738625104908.jpg",
@@ -286,13 +286,13 @@
                     "elType": "widget"
                 },
                 {
-                    "id": "7ab6b2d0",
+                    "id": "1d881450",
                     "settings": {
                         "content_width": "full"
                     },
                     "elements": [
                         {
-                            "id": "657ec1e",
+                            "id": "6566a3cd",
                             "settings": {
                                 "title": "What is a Laser Hair Removal Chicago about?",
                                 "typography_typography": "custom",
@@ -317,9 +317,9 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "11dd6c51",
+                            "id": "5ab37216",
                             "settings": {
-                                "editor": "Experience a revolutionary skincare method in None city. Our cutting-edge processes deliver long-lasting results. Enjoy a seamless and comfortable treatment every time. Embark on your rejuvenating skincare adventure today!"
+                                "editor": "Uncover an unparalleled hub for exceptional massage therapies in None. Our expert approach and dedicated therapists ensure rejuvenating experiences. Embrace relaxation and say hello to a revitalized self."
                             },
                             "elements": [],
                             "isInner": false,
@@ -327,9 +327,9 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "7748988b",
+                            "id": "5c2dc0fe",
                             "settings": {
-                                "title": "15 in None: Explore Your Perfect Hair Removal Solution",
+                                "title": "Discover the Perfect Skincare Solution for Your Beauty Goals",
                                 "align": "center",
                                 "typography_typography": "custom",
                                 "typography_font_family": "Playfair Display",
@@ -351,7 +351,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "1c1f1509",
+                            "id": "11304942",
                             "settings": {
                                 "editor": "<p data-start=\"186\" data-end=\"640\">Laser Hair Removal is an ideal solution for those who want to reduce unwanted hair with long-lasting results. You may be a great candidate if you\u2019re tired of constant shaving, waxing, or dealing with ingrown hairs and skin irritation. Whether you're targeting the legs, underarms, face, bikini line, or chest, this treatment offers a smooth, low-maintenance alternative that fits seamlessly into your lifestyle.</p><p data-start=\"642\" data-end=\"962\">At <span data-start=\"645\" data-end=\"666\">Elite Chicago Spa</span>, we use advanced, FDA-approved laser technology that safely treats all skin tones and is customized to your unique skin and hair type. Our experienced team ensures each session is precise, comfortable, and effective\u2014helping you achieve the hair-free skin you\u2019ve been looking for with confidence.</p>"
                             },
@@ -369,7 +369,7 @@
             "elType": "container"
         },
         {
-            "id": "1a9a20ae",
+            "id": "32dfeba1",
             "settings": {
                 "flex_direction": "column",
                 "min_height": {
@@ -383,7 +383,7 @@
             },
             "elements": [
                 {
-                    "id": "2022f70c",
+                    "id": "7d235373",
                     "settings": {
                         "title": "Laser Hair Removel  <br>Before and After",
                         "title_color": "#070707",
@@ -406,7 +406,7 @@
                     "elType": "widget"
                 },
                 {
-                    "id": "689c5da8",
+                    "id": "6ec62912",
                     "settings": {
                         "carousel_name": "Image Carousel",
                         "carousel": [
@@ -450,7 +450,7 @@
                     "elType": "widget"
                 },
                 {
-                    "id": "1467a950",
+                    "id": "73350ccd",
                     "settings": {
                         "title": "View More Results",
                         "link": {
@@ -476,7 +476,7 @@
                     "elType": "widget"
                 },
                 {
-                    "id": "215c7243",
+                    "id": "28329afb",
                     "settings": {
                         "width": {
                             "unit": "%",
@@ -496,7 +496,7 @@
             "elType": "container"
         },
         {
-            "id": "56926f2f",
+            "id": "47749faa",
             "settings": {
                 "jet_parallax_layout_list": [
                     {
@@ -523,7 +523,7 @@
             },
             "elements": [
                 {
-                    "id": "62fca232",
+                    "id": "10460e8b",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -534,7 +534,7 @@
                     },
                     "elements": [
                         {
-                            "id": "a96ceaa",
+                            "id": "b8c3055",
                             "settings": {
                                 "jet_parallax_layout_list": [
                                     {
@@ -556,7 +556,7 @@
                             },
                             "elements": [
                                 {
-                                    "id": "15c14c5f",
+                                    "id": "25bf438a",
                                     "settings": {
                                         "_column_size": 100,
                                         "width": {
@@ -567,7 +567,7 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "21fd2593",
+                                            "id": "24840cbe",
                                             "settings": {
                                                 "title": "What do our clients say about our spa services?",
                                                 "title_color": "#000000",
@@ -594,7 +594,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "ea3d6a2",
+                                            "id": "13fce604",
                                             "settings": {
                                                 "shortcode": "[trustindex no-registration=google]"
                                             },
@@ -604,7 +604,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "36aea9f3",
+                                            "id": "38522375",
                                             "settings": {
                                                 "text": "SEE MORE REVIEWS",
                                                 "align": "center",
@@ -662,7 +662,7 @@
             "elType": "container"
         },
         {
-            "id": "298283b4",
+            "id": "100db2ab",
             "settings": {
                 "min_height": {
                     "unit": "px",
@@ -718,7 +718,7 @@
             },
             "elements": [
                 {
-                    "id": "13f28077",
+                    "id": "559e9f62",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -729,9 +729,9 @@
                     },
                     "elements": [
                         {
-                            "id": "4b71b9af",
+                            "id": "4685bb7d",
                             "settings": {
-                                "title": "Flawless Skin Solutions: The Gold Standard in Laser Hair Removal",
+                                "title": "Sleek Results Await - Painless Hair Removal Solution",
                                 "align": "center",
                                 "typography_typography": "custom",
                                 "typography_font_size": {
@@ -774,9 +774,9 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "783203f",
+                            "id": "2c4e9efe",
                             "settings": {
-                                "editor": "<p>Contact us today to experience top-notch service and results. Our skilled team ensures a smooth process with premium materials. Say goodbye to unwanted hair - book now using the link below for an effortless appointment scheduling.</p>",
+                                "editor": "<p>CONTACT US today to experience unmatched quality in hair removal services. Our skilled team delivers exceptional results. Schedule your appointment effortlessly by clicking the button below.</p>",
                                 "align": "center",
                                 "typography_typography": "custom",
                                 "typography_font_family": "Playfair Display",
@@ -796,7 +796,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "3ac0e5ff",
+                            "id": "532c5ae0",
                             "settings": {
                                 "text": "312-841-9750",
                                 "typography_typography": "custom",
@@ -840,7 +840,7 @@
             "elType": "container"
         },
         {
-            "id": "7b73abb4",
+            "id": "b575308",
             "settings": {
                 "jet_parallax_layout_list": [
                     {
@@ -876,7 +876,7 @@
             },
             "elements": [
                 {
-                    "id": "41eea579",
+                    "id": "53ae63f",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -887,7 +887,7 @@
                     },
                     "elements": [
                         {
-                            "id": "7757912a",
+                            "id": "21399125",
                             "settings": {
                                 "title": "Latest Advances in Laser Hair Removal Technology\n",
                                 "size": "xl",
@@ -912,7 +912,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "75d89296",
+                            "id": "32046de2",
                             "settings": {
                                 "jet_parallax_layout_list": [
                                     {
@@ -935,7 +935,7 @@
                             },
                             "elements": [
                                 {
-                                    "id": "34176ca6",
+                                    "id": "4b8f3688",
                                     "settings": {
                                         "_column_size": 50,
                                         "width": {
@@ -946,7 +946,7 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "5a37ab41",
+                                            "id": "1ca36e81",
                                             "settings": {
                                                 "image": {
                                                     "url": "https://elitechicagospa.com/wp-content/uploads/2025/04/laser-epilation-hair-removal-therapy-scaled.jpg",
@@ -971,7 +971,7 @@
                                     "elType": "container"
                                 },
                                 {
-                                    "id": "2a202635",
+                                    "id": "53832915",
                                     "settings": {
                                         "_column_size": 50,
                                         "width": {
@@ -983,7 +983,7 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "2dbef9bb",
+                                            "id": "5268bd31",
                                             "settings": {
                                                 "editor": "<p class=\"\" data-start=\"741\" data-end=\"1055\">Modern lasers like the <strong data-start=\"764\" data-end=\"789\">Candela GentleMax Pro</strong>, <strong data-start=\"791\" data-end=\"815\">Soprano ICE Platinum</strong>, and <strong data-start=\"821\" data-end=\"835\">Clarity II</strong> offer improved efficacy for a wider range of skin tones and hair types. These advanced systems combine multiple wavelengths to target hair follicles more precisely, reducing discomfort and the number of sessions needed.</p><p class=\"\" data-start=\"160\" data-end=\"685\">Experience smoother, faster results with today's most advanced laser hair removal systems. New-generation devices like the GentleMax Pro and Soprano ICE safely treat all skin tones, with faster sessions, greater precision, and minimal discomfort thanks to integrated cooling technology. Personalized protocols and AI-driven settings ensure better results with fewer treatments. At Elite Chicago Spa, we combine innovation and expertise to deliver the future of laser hair removal \u2014 safe, effective, and tailored just for you.</p>",
                                                 "typography_typography": "custom",
@@ -1019,7 +1019,7 @@
             "elType": "container"
         },
         {
-            "id": "62367cd2",
+            "id": "6b145c8b",
             "settings": {
                 "min_height": {
                     "unit": "px",
@@ -1061,7 +1061,7 @@
             },
             "elements": [
                 {
-                    "id": "18575e6d",
+                    "id": "76391b82",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -1072,7 +1072,7 @@
                     },
                     "elements": [
                         {
-                            "id": "40a9e242",
+                            "id": "7ee561b4",
                             "settings": {
                                 "title": "Laser Hair Removal Highlights ",
                                 "align": "center",
@@ -1102,7 +1102,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "4e0cd4dc",
+                            "id": "31b3d4c6",
                             "settings": {
                                 "jet_parallax_layout_list": [
                                     {
@@ -1124,7 +1124,7 @@
                             },
                             "elements": [
                                 {
-                                    "id": "39a73c29",
+                                    "id": "2c22de2",
                                     "settings": {
                                         "_column_size": 100,
                                         "width": {
@@ -1135,7 +1135,7 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "3af6f20e",
+                                            "id": "7a0f85be",
                                             "settings": {
                                                 "title": " FDA Cleared",
                                                 "size": "large",
@@ -1151,7 +1151,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "12e39445",
+                                            "id": "4f97160b",
                                             "settings": {
                                                 "title": "Non-invasive | Painless | Anesthesia-free | No downtime",
                                                 "header_size": "p",
@@ -1177,7 +1177,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "60a8f597",
+                                            "id": "3252ae97",
                                             "settings": {
                                                 "space": {
                                                     "unit": "px",
@@ -1191,7 +1191,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "257da2e3",
+                                            "id": "2e5605f2",
                                             "settings": {
                                                 "carousel_name": "Carousel",
                                                 "carousel_items": [
@@ -1216,13 +1216,13 @@
                                             },
                                             "elements": [
                                                 {
-                                                    "id": "3c1a0714",
+                                                    "id": "4867ec82",
                                                     "settings": {
                                                         "_title": "Slide #1"
                                                     },
                                                     "elements": [
                                                         {
-                                                            "id": "af46599",
+                                                            "id": "50fabb3f",
                                                             "settings": {
                                                                 "_column_size": 25,
                                                                 "width": {
@@ -1233,7 +1233,7 @@
                                                             },
                                                             "elements": [
                                                                 {
-                                                                    "id": "7ee75875",
+                                                                    "id": "67dd4330",
                                                                     "settings": {
                                                                         "title": "Treatment time",
                                                                         "size": "medium",
@@ -1249,7 +1249,7 @@
                                                                     "elType": "widget"
                                                                 },
                                                                 {
-                                                                    "id": "41f3f76b",
+                                                                    "id": "54e96e48",
                                                                     "settings": {
                                                                         "title": "Small areas: <strong data-start=\"518\" data-end=\"534\">5\u201310 minutes</strong><br data-start=\"534\" data-end=\"537\">\nLarge areas: <strong data-start=\"553\" data-end=\"570\">30\u201360 minutes</strong>",
                                                                         "header_size": "p",
@@ -1283,13 +1283,13 @@
                                                     "isLocked": true
                                                 },
                                                 {
-                                                    "id": "3521ef78",
+                                                    "id": "3d7ea198",
                                                     "settings": {
                                                         "_title": "Slide #2"
                                                     },
                                                     "elements": [
                                                         {
-                                                            "id": "3bbbdc37",
+                                                            "id": "369ecfb8",
                                                             "settings": {
                                                                 "_column_size": 25,
                                                                 "width": {
@@ -1300,7 +1300,7 @@
                                                             },
                                                             "elements": [
                                                                 {
-                                                                    "id": "38cf441d",
+                                                                    "id": "601a1e55",
                                                                     "settings": {
                                                                         "title": "How long does results last?",
                                                                         "size": "medium",
@@ -1316,7 +1316,7 @@
                                                                     "elType": "widget"
                                                                 },
                                                                 {
-                                                                    "id": "24581f7",
+                                                                    "id": "519a829d",
                                                                     "settings": {
                                                                         "title": "Long-lasting results with minimal touch-ups.",
                                                                         "header_size": "p",
@@ -1350,13 +1350,13 @@
                                                     "isLocked": true
                                                 },
                                                 {
-                                                    "id": "3f8d2a80",
+                                                    "id": "152c304",
                                                     "settings": {
                                                         "_title": "Slide #3"
                                                     },
                                                     "elements": [
                                                         {
-                                                            "id": "71c08539",
+                                                            "id": "1d7138ce",
                                                             "settings": {
                                                                 "_column_size": 25,
                                                                 "width": {
@@ -1367,7 +1367,7 @@
                                                             },
                                                             "elements": [
                                                                 {
-                                                                    "id": "6f2de29c",
+                                                                    "id": "4b184996",
                                                                     "settings": {
                                                                         "title": "Effectiveness?",
                                                                         "header_size": "p",
@@ -1382,7 +1382,7 @@
                                                                     "elType": "widget"
                                                                 },
                                                                 {
-                                                                    "id": "6691225a",
+                                                                    "id": "7667e8b8",
                                                                     "settings": {
                                                                         "title": "<strong data-start=\"392\" data-end=\"417\">90% average reduction</strong> in hair growth",
                                                                         "header_size": "p",
@@ -1416,13 +1416,13 @@
                                                     "isLocked": true
                                                 },
                                                 {
-                                                    "id": "564bff74",
+                                                    "id": "2d31cb45",
                                                     "settings": {
                                                         "_title": "Slide #4"
                                                     },
                                                     "elements": [
                                                         {
-                                                            "id": "644e1f1e",
+                                                            "id": "569c4c11",
                                                             "settings": {
                                                                 "_column_size": 25,
                                                                 "width": {
@@ -1433,7 +1433,7 @@
                                                             },
                                                             "elements": [
                                                                 {
-                                                                    "id": "796a65ff",
+                                                                    "id": "10172965",
                                                                     "settings": {
                                                                         "title": "How many areas can be treated?",
                                                                         "header_size": "p",
@@ -1448,7 +1448,7 @@
                                                                     "elType": "widget"
                                                                 },
                                                                 {
-                                                                    "id": "242731a0",
+                                                                    "id": "50bf6fb7",
                                                                     "settings": {
                                                                         "title": "Treat up to <strong data-start=\"293\" data-end=\"306\">10+ areas</strong>",
                                                                         "header_size": "p",
@@ -1473,7 +1473,7 @@
                                                                     "elType": "widget"
                                                                 },
                                                                 {
-                                                                    "id": "28f4bd61",
+                                                                    "id": "913ec96",
                                                                     "settings": {
                                                                         "space": {
                                                                             "unit": "px",
@@ -1509,7 +1509,7 @@
                             "elType": "container"
                         },
                         {
-                            "id": "75507897",
+                            "id": "77a2c4b1",
                             "settings": {
                                 "text": "I Want to Experience  Laser Hair Removal",
                                 "typography_typography": "custom",
@@ -1555,7 +1555,7 @@
             "elType": "container"
         },
         {
-            "id": "39a35d61",
+            "id": "69d7ab21",
             "settings": {
                 "height": "min-height",
                 "custom_height": {
@@ -1583,14 +1583,14 @@
             },
             "elements": [
                 {
-                    "id": "75639707",
+                    "id": "7d696b5e",
                     "settings": {
                         "_column_size": 50,
                         "_inline_size": null
                     },
                     "elements": [
                         {
-                            "id": "ce72915",
+                            "id": "7b5a3767",
                             "settings": {
                                 "image": {
                                     "url": "https://elitechicagospa.com/wp-content/uploads/2023/07/elite-spa-botox-specials-chicago.jpg",
@@ -1629,16 +1629,16 @@
                     "elType": "column"
                 },
                 {
-                    "id": "34595e7b",
+                    "id": "74b9e284",
                     "settings": {
                         "_column_size": 50,
                         "_inline_size": null
                     },
                     "elements": [
                         {
-                            "id": "248e5511",
+                            "id": "7d2e8b1e",
                             "settings": {
-                                "title": "Discover What Sets Us Apart!",
+                                "title": "Unlock Efficiency: What Makes Us Different?",
                                 "title_color": "#000000",
                                 "typography_typography": "custom",
                                 "typography_font_family": "Playfair Display",
@@ -1662,9 +1662,9 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "51bb64c4",
+                            "id": "7ac8654f",
                             "settings": {
-                                "editor": "Discover how our innovative hair reduction technique merges cutting-edge technology for all skin tones and hair types. The process efficiently deactivates follicles for lasting smoothness, ensuring a comfortable experience with remarkable outcomes.",
+                                "editor": "Unwind and revitalize at 15. Our expert team uses cutting-edge techniques for efficient results. Experience top-tier service with a focus on precision and comfort. Feel confident and radiant with our customized approach to beauty and rejuvenation.",
                                 "text_color": "#000000",
                                 "typography_typography": "custom",
                                 "typography_font_family": "Lato",
@@ -1682,7 +1682,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "7afe37e5",
+                            "id": "6335a6c0",
                             "settings": {
                                 "text": "SCHEDULE AN APPOINTMENT",
                                 "typography_typography": "custom",
@@ -1721,7 +1721,7 @@
             "elType": "section"
         },
         {
-            "id": "3050db97",
+            "id": "3e695265",
             "settings": {
                 "stretch_section": "section-stretched",
                 "boxed_width": {
@@ -1753,7 +1753,7 @@
             },
             "elements": [
                 {
-                    "id": "68c4cb90",
+                    "id": "52c7f2c",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -1764,9 +1764,9 @@
                     },
                     "elements": [
                         {
-                            "id": "249f3eaf",
+                            "id": "74187395",
                             "settings": {
-                                "title": "Effortless Beauty: Rediscover Radiant Skin with 15!",
+                                "title": "Revolutionize Your Look in None - Elevate Your Style Today",
                                 "align": "center",
                                 "size": "xl",
                                 "__globals__": {
@@ -1780,9 +1780,9 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "639a87eb",
+                            "id": "83615bc",
                             "settings": {
-                                "title": "Enhancing Beauty with Premier Laser Hair Removal Services in Chicago",
+                                "title": "Discover the Top Destinations for Laser Hair Removal Treatments",
                                 "size": "large",
                                 "align": "center",
                                 "__globals__": {
@@ -1795,13 +1795,13 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "3dc74daf",
+                            "id": "4f4a585",
                             "settings": {
                                 "content_width": "full"
                             },
                             "elements": [
                                 {
-                                    "id": "6cc79f67",
+                                    "id": "390caf8a",
                                     "settings": {
                                         "content_width": "full",
                                         "flex_direction": "row",
@@ -1810,9 +1810,9 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "76b0341d",
+                                            "id": "31016030",
                                             "settings": {
-                                                "editor": "Discover how our cutting-edge hair removal services in None bring a new level of comfort and efficiency. Our tailored approach ensures lasting results, letting you confidently embrace silky-smooth skin. Book now to experience hassle-free grooming like never before.",
+                                                "editor": "Transformed text: <p class= data-start=206 data-end=476>At our cutting-edge spa, we excel in personalized laser hair removal services for a range of skin tones and types. Our FDA-approved treatments ensure safe, precise, and enduring results, making traditional hair removal a thing of the past.</p><p class= data-start=478 data-end=745>Our expertise covers key areas like the <strong data-start=514 data-end=581>face, underarms, arms, legs, bikini region, back, chest, and neck</strong>. From specific zones to full-body treatments, each session is tailored to maximize effectiveness based on your unique skin and hair characteristics.</p><p class= data-start=747 data-end=866><span data-start=747 data-end=866>Embrace the confidence of silky, hair-free skin. Book your laser hair removal session today.</span></p>",
                                                 "_element_width": "initial",
                                                 "_element_custom_width": {
                                                     "unit": "%",
@@ -1826,7 +1826,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "58747af9",
+                                            "id": "d2ee676",
                                             "settings": {
                                                 "carousel_name": "Image Carousel",
                                                 "carousel": [
@@ -1879,7 +1879,7 @@
             "elType": "container"
         },
         {
-            "id": "5710c68e",
+            "id": "ce063d5",
             "settings": {
                 "min_height": {
                     "unit": "px",
@@ -1926,7 +1926,7 @@
             },
             "elements": [
                 {
-                    "id": "3018082",
+                    "id": "de0888b",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -1937,9 +1937,9 @@
                     },
                     "elements": [
                         {
-                            "id": "681c5fc1",
+                            "id": "648471d2",
                             "settings": {
-                                "title": "Enhance your appearance with Laser Hair Removal services today!",
+                                "title": "Revitalize your look with Laser Hair Removal in a City",
                                 "align": "center",
                                 "title_color": "#000000",
                                 "typography_typography": "custom",
@@ -1980,9 +1980,9 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "ce9abfc",
+                            "id": "68e2e6df",
                             "settings": {
-                                "editor": "<p style=text-align: center;>Unlock your potential with top-notch service and unmatched professionalism. Achieve the results you deserve with ease. <strong>Your journey begins now</strong> \u2013 take the next step towards a better you!</p>",
+                                "editor": "Discover the key to achieving your desired results. Book your consultation now for top-notch service and outstanding expertise. Join us on this journey to success. Embrace the future by taking the first step. ",
                                 "__globals__": {
                                     "text_color": "globals/colors?id=accent"
                                 }
@@ -1993,7 +1993,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "33d19840",
+                            "id": "6257de6c",
                             "settings": {
                                 "text": "Contact Us Today",
                                 "typography_typography": "custom",
@@ -2034,7 +2034,7 @@
             "elType": "container"
         },
         {
-            "id": "30d64dd4",
+            "id": "606757e3",
             "settings": {
                 "jet_parallax_layout_list": [
                     {
@@ -2060,7 +2060,7 @@
             },
             "elements": [
                 {
-                    "id": "2066c970",
+                    "id": "37e7fca6",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -2071,9 +2071,9 @@
                     },
                     "elements": [
                         {
-                            "id": "4b9fec20",
+                            "id": "18b1d80e",
                             "settings": {
-                                "title": "Top-notch Hair Removal Services for Radiant Skin in None",
+                                "title": "Discover the Power of Custom Home Builders in Denver",
                                 "size": "large",
                                 "align": "center",
                                 "__globals__": {
@@ -2086,7 +2086,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "5d6b135d",
+                            "id": "57748458",
                             "settings": {
                                 "content_width": "full",
                                 "flex_direction": "column",
@@ -2101,7 +2101,7 @@
                             },
                             "elements": [
                                 {
-                                    "id": "5ddd6fe4",
+                                    "id": "8c9c408",
                                     "settings": {
                                         "content_width": "full",
                                         "flex_direction": "row",
@@ -2109,9 +2109,9 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "3bb92b79",
+                                            "id": "3d538584",
                                             "settings": {
-                                                "editor": "Discover a future without the hassle of razors or waxing. Experience cutting-edge laser hair removal at Elite Chicago Spa. Embrace smooth skin confidently with our professional, long-lasting solutions. Join us on YouTube to uncover more insights and tips on our services.",
+                                                "editor": "Experience the ultimate solution for smooth, radiant skin with cutting-edge laser hair removal. Enjoy long-lasting results, fewer irritations, and quick, comfortable treatments suitable for all. Embrace a confident you. Discover more insights on our YouTube channel.",
                                                 "_element_width": "initial",
                                                 "_element_custom_width": {
                                                     "unit": "%",
@@ -2125,7 +2125,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "6466c75b",
+                                            "id": "18304275",
                                             "settings": {
                                                 "youtube_url": "https://youtu.be/IS4E0gcV-s0",
                                                 "vimeo_url": "https://vimeo.com/235215203",
@@ -2144,7 +2144,7 @@
                                     "elType": "container"
                                 },
                                 {
-                                    "id": "5f836175",
+                                    "id": "7cb2a726",
                                     "settings": {
                                         "text": "Contact Us Today",
                                         "typography_typography": "custom",
@@ -2189,7 +2189,7 @@
             "elType": "container"
         },
         {
-            "id": "64c78509",
+            "id": "6d4b8331",
             "settings": {
                 "boxed_width": {
                     "unit": "px",
@@ -2215,7 +2215,7 @@
             },
             "elements": [
                 {
-                    "id": "4a778bfe",
+                    "id": "3e22fcdd",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -2227,9 +2227,9 @@
                     },
                     "elements": [
                         {
-                            "id": "1b6e60c0",
+                            "id": "546523e1",
                             "settings": {
-                                "title": "Smooth and Affordable Laser Hair Removal in Chicago",
+                                "title": "Smooth Skin Awaits: Laser Hair Removal Results in Chicago",
                                 "size": "large",
                                 "align": "center",
                                 "__globals__": {
@@ -2242,13 +2242,13 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "24e41ea9",
+                            "id": "1c34e046",
                             "settings": {
                                 "content_width": "full"
                             },
                             "elements": [
                                 {
-                                    "id": "79d5d999",
+                                    "id": "15c49319",
                                     "settings": {
                                         "content_width": "full",
                                         "flex_direction": "row",
@@ -2256,9 +2256,9 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "741b75b6",
+                                            "id": "2314a7ec",
                                             "settings": {
-                                                "editor": "At 15 in None, we pride ourselves on our transparent pricing for laser hair removal services. Our pricing is determined by the time required for the specific treatment area, ensuring fairness and accuracy. Smaller areas like the upper lip, lower lip, and chin typically take less than 15 minutes, making them more cost-effective options. In contrast, larger areas such as the legs or back may require more time, reflecting a slightly higher price point. If you re seeking top-notch laser hair removal in None, look no further than 15. With a focus on quality service, professional expertise, and efficient treatment, we guarantee a positive experience for every client.",
+                                                "editor": "<p style=text-align: center;>Experience premium laser hair removal services tailored to your needs and budget. Our pricing structure is designed to be fair and transparent, with rates varying according to the size of the treated area. Smaller areas like the upper lip or chin can be swiftly handled in under 15 minutes, reflecting more affordable prices compared to larger areas such as legs or back. At 15 in None, our commitment to quality, professionalism, and efficiency sets us apart as your go-to destination for laser hair removal. Say goodbye to unwanted hair and hello to smooth, radiant skin with us!</p>",
                                                 "_element_width": "initial",
                                                 "_element_custom_width": {
                                                     "unit": "%",
@@ -2272,7 +2272,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "39928fde",
+                                            "id": "7b2159c",
                                             "settings": {
                                                 "image": {
                                                     "url": "https://elitechicagospa.com/wp-content/uploads/2022/05/laser-hair-removal-hole.jpg",
@@ -2304,7 +2304,7 @@
             "elType": "container"
         },
         {
-            "id": "19186f4",
+            "id": "6d05989",
             "settings": {
                 "jet_parallax_layout_list": [
                     {
@@ -2330,7 +2330,7 @@
             },
             "elements": [
                 {
-                    "id": "bbf4d49",
+                    "id": "7335865",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -2341,9 +2341,9 @@
                     },
                     "elements": [
                         {
-                            "id": "3f0f9552",
+                            "id": "453d49ca",
                             "settings": {
-                                "title": "Unlocking Beauty Secrets for Men and Women in None.",
+                                "title": "Revolutionizing Hair Removal: Tailored Services for All Genders in None",
                                 "size": "xl",
                                 "align": "center",
                                 "__globals__": {
@@ -2357,7 +2357,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "3f9c73cf",
+                            "id": "62f16104",
                             "settings": {
                                 "structure": "20",
                                 "jet_parallax_layout_list": [
@@ -2380,7 +2380,7 @@
                             },
                             "elements": [
                                 {
-                                    "id": "3b95feb6",
+                                    "id": "471ca1ed",
                                     "settings": {
                                         "_column_size": 50,
                                         "width": {
@@ -2392,9 +2392,9 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "ff974fc",
+                                            "id": "14c00ac",
                                             "settings": {
-                                                "editor": "Discover the ultimate solution for smooth, hair-free skin at our state-of-the-art facility in None. Our advanced laser hair removal services cater to all skin types and are customized for each individual s needs. Whether you re a trendsetter looking for a defined silhouette or an athlete opting for a smooth performance, we ve got you covered. Our skilled professionals ensure a seamless experience, from initial assessment to post-treatment care. Embrace confidence with our efficient procedures that guarantee long-lasting results. Say goodbye to the hassle of daily maintenance and hello to a rejuvenated, carefree lifestyle. Experience the transformative power of laser hair removal at 15 - your go-to destination for premium service and unparalleled expertise."
+                                                "editor": "Discover the ultimate solution for smooth, flawless skin at 15 in None. Our cutting-edge laser hair removal service is carefully tailored to suit all skin types, delivering remarkable results for both men and women. Our skilled professionals meticulously examine the treatment area, ensuring a comfortable experience with every session. With a focus on precision and efficiency, we provide a personalized approach, guaranteeing maximum effectiveness for each individual. From legs and underarms to the back and chest, our versatile treatments cater to various areas of concern. Experience the freedom of smooth skin with our state-of-the-art laser hair removal service, where quality meets expertise for an unparalleled experience you can trust. Unveil the best version of yourself with 15 in None."
                                             },
                                             "elements": [],
                                             "isInner": false,
@@ -2406,7 +2406,7 @@
                                     "elType": "container"
                                 },
                                 {
-                                    "id": "4c591fac",
+                                    "id": "43eb5241",
                                     "settings": {
                                         "_column_size": 50,
                                         "width": {
@@ -2419,7 +2419,7 @@
                                     },
                                     "elements": [
                                         {
-                                            "id": "70093b03",
+                                            "id": "47a80fd1",
                                             "settings": {
                                                 "youtube_url": "https://youtu.be/NdXZyf7EMXg",
                                                 "vimeo_url": "https://vimeo.com/235215203",
@@ -2439,7 +2439,7 @@
                                             "elType": "widget"
                                         },
                                         {
-                                            "id": "6189c0a4",
+                                            "id": "29f4a9e3",
                                             "settings": {
                                                 "text": "Call Now",
                                                 "align": "center",
@@ -2488,7 +2488,7 @@
             "elType": "container"
         },
         {
-            "id": "564a20f8",
+            "id": "2a6f5b49",
             "settings": {
                 "stretch_section": "section-stretched",
                 "content_width": {
@@ -2507,14 +2507,14 @@
             },
             "elements": [
                 {
-                    "id": "7900b4b4",
+                    "id": "4badbfb1",
                     "settings": {
                         "_column_size": 100,
                         "_inline_size": null
                     },
                     "elements": [
                         {
-                            "id": "7fea18ab",
+                            "id": "15f447ce",
                             "settings": {
                                 "selected_icon": {
                                     "value": "fas fa-question-circle",
@@ -2528,7 +2528,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "66059379",
+                            "id": "2b9fbf49",
                             "settings": {
                                 "title": "Laser Hair Removal FAQs",
                                 "align": "center",
@@ -2551,7 +2551,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "de6513",
+                            "id": "21b66b69",
                             "settings": [],
                             "elements": [],
                             "isInner": false,
@@ -2567,7 +2567,7 @@
             "elType": "section"
         },
         {
-            "id": "2a38cbde",
+            "id": "2407378b",
             "settings": {
                 "jet_parallax_layout_list": [
                     {
@@ -2580,14 +2580,14 @@
             },
             "elements": [
                 {
-                    "id": "5919aa19",
+                    "id": "3e7e67f0",
                     "settings": {
                         "_column_size": 100,
                         "_inline_size": null
                     },
                     "elements": [
                         {
-                            "id": "4de1c5f2",
+                            "id": "1713769b",
                             "settings": {
                                 "tabs": [
                                     {
@@ -2641,8 +2641,8 @@
                                         "tab_content": "<p class=\"\" data-start=\"213\" data-end=\"488\">After a laser treatment, it's recommended to <strong data-start=\"258\" data-end=\"305\">wait at least 6 to 8 hours before showering</strong>, although <strong data-start=\"316\" data-end=\"345\">waiting 24 hours is ideal</strong>, especially if the treated area is sensitive or red. This allows your skin time to cool down and begin the healing process without irritation.</p><p class=\"\" data-start=\"490\" data-end=\"509\">When you do shower:</p><ul data-start=\"510\" data-end=\"737\"><li class=\"\" data-start=\"510\" data-end=\"547\"><p class=\"\" data-start=\"512\" data-end=\"547\">Use <strong data-start=\"516\" data-end=\"534\">lukewarm water</strong> (never hot).</p></li><li class=\"\" data-start=\"548\" data-end=\"627\"><p class=\"\" data-start=\"550\" data-end=\"627\">Avoid scrubbing, exfoliating, or using perfumed products on the treated area.</p></li><li class=\"\" data-start=\"628\" data-end=\"668\"><p class=\"\" data-start=\"630\" data-end=\"668\">Pat the skin dry gently\u2014<strong data-start=\"654\" data-end=\"667\">don\u2019t rub</strong>.</p></li><li class=\"\" data-start=\"669\" data-end=\"737\"><p class=\"\" data-start=\"671\" data-end=\"737\">Avoid saunas, steam rooms, and hot tubs for <strong data-start=\"715\" data-end=\"736\">at least 48 hours</strong>.</p></li></ul><p class=\"\" data-start=\"739\" data-end=\"892\">Following these guidelines helps minimize the risk of irritation, redness, or other side effects, and supports optimal results from your laser treatment.</p><p class=\"\" data-start=\"894\" data-end=\"1033\">If you're ever unsure, our specialists at <strong data-start=\"936\" data-end=\"957\">Elite Chicago Spa</strong> are here to guide you through proper aftercare for your specific treatment.</p>"
                                     },
                                     {
-                                        "tab_title": "How can I be sure that the services provided by 15 in None are safe and effective?",
-                                        "tab_content": "<p>Our team at 15 takes great pride in ensuring that all our services in None are both safe and effective. We carefully vet each procedure and adhere to industry standards to guarantee our clients  safety and deliver the best possible results.</p>"
+                                        "tab_title": "How can I ensure that your services are safe and effective?",
+                                        "tab_content": "<p>Our team of experienced professionals in None prioritizes safety by following strict guidelines and using proven techniques to ensure the effectiveness of our services. Your well-being is our top priority.</p>"
                                     }
                                 ],
                                 "__globals__": {
@@ -2664,7 +2664,7 @@
             "elType": "section"
         },
         {
-            "id": "329e2aee",
+            "id": "17dc14d5",
             "settings": {
                 "jet_parallax_layout_list": [
                     {
@@ -2691,7 +2691,7 @@
             },
             "elements": [
                 {
-                    "id": "5497ef7",
+                    "id": "3634c87d",
                     "settings": {
                         "_column_size": 50,
                         "width": {
@@ -2702,7 +2702,7 @@
                     },
                     "elements": [
                         {
-                            "id": "371ea3a8",
+                            "id": "209306a9",
                             "settings": {
                                 "title": "Where Urban Energy Meets Everyday Wellness",
                                 "title_color": "#000000",
@@ -2728,7 +2728,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "11a69d07",
+                            "id": "665885bc",
                             "settings": {
                                 "editor": "<p data-start=\"258\" data-end=\"547\">From the scenic shores of Lake Michigan to the stylish streets of Lincoln Park and the Gold Coast,&nbsp;<span data-start=\"357\" data-end=\"428\"><a href=\"https://www.choosechicago.com/\" target=\"_blank\">Chicago</a>&nbsp;is a city that inspires movement, creativity, and self-care</span>. With its iconic skyline, vibrant culture, and deep sense of community, it\u2019s more than a destination\u2014it\u2019s a lifestyle.</p>\n<p data-start=\"549\" data-end=\"837\">Whether you\u2019re shopping along the Magnificent Mile, enjoying world-class dining, or taking time to unwind, <span data-start=\"656\" data-end=\"724\">Chicago offers the perfect balance of excitement and restoration</span>. At Elite Chicago Spa, we\u2019re proud to be part of a city that celebrates looking and feeling your best every day.</p>",
                                 "align": "justify"
@@ -2739,7 +2739,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "1a4ff0bd",
+                            "id": "95315d1",
                             "settings": {
                                 "text": "Click here",
                                 "align": "center",
@@ -2760,7 +2760,7 @@
                     "elType": "container"
                 },
                 {
-                    "id": "6fbb5991",
+                    "id": "260b8c10",
                     "settings": {
                         "_column_size": 50,
                         "width": {
@@ -2771,7 +2771,7 @@
                     },
                     "elements": [
                         {
-                            "id": "78f6791e",
+                            "id": "665a78e1",
                             "settings": {
                                 "address": "3952 N. Southport Ave Chicago IL 60613",
                                 "height": {
@@ -2794,7 +2794,7 @@
             "elType": "container"
         },
         {
-            "id": "3033fcbc",
+            "id": "5ef37b2a",
             "settings": {
                 "min_height": {
                     "unit": "px",
@@ -2806,9 +2806,9 @@
             },
             "elements": [
                 {
-                    "id": "28dfb00",
+                    "id": "35f746f4",
                     "settings": {
-                        "title": "Experience Smooth Skin with Laser Hair Removal in None.",
+                        "title": "Experience Flawless Results with Laser Hair Removal in None.",
                         "align": "center",
                         "typography_typography": "custom",
                         "typography_font_family": "Playfair Display",
@@ -2829,9 +2829,9 @@
                     "elType": "widget"
                 },
                 {
-                    "id": "4e545fc0",
+                    "id": "56b4d5c5",
                     "settings": {
-                        "editor": "Elevate your beauty routine in None with 15. Experience flawless results with our top-notch services tailored to your needs. Achieve lasting radiance effortlessly. Book now for a transformation that speaks volumes.",
+                        "editor": "Discover a new level of excellence at 15 in None. Our top-notch service, exceptional materials, skilled team, and swift solutions ensure a seamless experience. Take the next step towards a brighter future today.",
                         "_margin": {
                             "unit": "px",
                             "top": "35",
@@ -2851,7 +2851,7 @@
             "elType": "container"
         },
         {
-            "id": "5115a70e",
+            "id": "37e3defb",
             "settings": {
                 "jet_parallax_layout_list": [
                     {
@@ -2891,7 +2891,7 @@
             },
             "elements": [
                 {
-                    "id": "44382365",
+                    "id": "1b5b7092",
                     "settings": {
                         "_column_size": 100,
                         "width": {
@@ -2902,7 +2902,7 @@
                     },
                     "elements": [
                         {
-                            "id": "767b7a61",
+                            "id": "73da6811",
                             "settings": {
                                 "title": "Laser Hair Removal Resources",
                                 "align": "center",
@@ -2926,7 +2926,7 @@
                             "elType": "widget"
                         },
                         {
-                            "id": "5972248",
+                            "id": "58dbaa25",
                             "settings": {
                                 "tabs": [
                                     {
