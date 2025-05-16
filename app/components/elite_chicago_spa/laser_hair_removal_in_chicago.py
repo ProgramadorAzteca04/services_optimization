@@ -35,11 +35,29 @@ class LaserHairRemovalChicago:
         self.local_json = load_json_file(json_file)
 
 
+
+    def header_block(self):
+        try:
+                title = self.local_json["content"][0]["elements"][0]["elements"][1]
+                content = self.local_json["content"][0]["elements"][0]["elements"][2]
+
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_cta_desc(content["settings"]["editor"])
+
+                title["settings"]["title"] = title_text
+                content["settings"]["editor"] = content_text
+
+                save_json_file(json_file, self.local_json, "Header Block")
+
+        except Exception as e:
+            print("Error en Header Block:", str(e))
+
+
     def block_introduction(self):
         try:
             content = self.local_json["content"][1]["elements"][1]["elements"][1]
 
-            content_text = self.gpt.spa_services_introduction_desc(
+            content_text = self.gpt.spa_services_laser_introduction_desc(
                 content["settings"]["editor"]
             )
 
@@ -56,8 +74,8 @@ class LaserHairRemovalChicago:
                 title = self.local_json["content"][1]["elements"][1]["elements"][2]
                 content = self.local_json["content"][1]["elements"][1]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_cta_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_cta_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -72,8 +90,8 @@ class LaserHairRemovalChicago:
                 title = self.local_json["content"][4]["elements"][0]["elements"][0]
                 content = self.local_json["content"][4]["elements"][0]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_cta_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_cta_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -88,8 +106,8 @@ class LaserHairRemovalChicago:
                 title = self.local_json["content"][7]["elements"][1]["elements"][0]
                 content = self.local_json["content"][7]["elements"][1]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_cta_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_cta_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -106,9 +124,9 @@ class LaserHairRemovalChicago:
                 subtitle = self.local_json["content"][8]["elements"][0]["elements"][1]
                 content = self.local_json["content"][8]["elements"][0]["elements"][2]["elements"][0]["elements"][0]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                subtitle_text = self.gpt.spa_services_cta_title(subtitle["settings"]["title"])
-                content_text = self.gpt.spa_services_cta_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
+                subtitle_text = self.gpt.spa_services_laser_cta_title(subtitle["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_cta_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 subtitle["settings"]["title"] = subtitle_text
@@ -124,8 +142,8 @@ class LaserHairRemovalChicago:
                 title = self.local_json["content"][9]["elements"][0]["elements"][0]
                 content = self.local_json["content"][9]["elements"][0]["elements"][1]
                 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_cta_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_cta_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -141,7 +159,7 @@ class LaserHairRemovalChicago:
                 title = self.local_json["content"][10]["elements"][0]["elements"][0]
                 content = self.local_json["content"][10]["elements"][0]["elements"][1]["elements"][0]["elements"][0]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
                 content_text = self.gpt.spa_services_laser_youtube_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
@@ -156,8 +174,8 @@ class LaserHairRemovalChicago:
         try:
                 title = self.local_json["content"][11]["elements"][0]["elements"][0]
                 content = self.local_json["content"][11]["elements"][0]["elements"][1]["elements"][0]["elements"][0]
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_cta_imgdesc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_cta_img_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -171,8 +189,8 @@ class LaserHairRemovalChicago:
         try:
                 title = self.local_json["content"][12]["elements"][0]["elements"][0]
                 content = self.local_json["content"][12]["elements"][0]["elements"][1]["elements"][0]["elements"][0]
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_cta_imgdesc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_cta_img_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -223,7 +241,7 @@ class LaserHairRemovalChicago:
                 title = self.local_json["content"][15]["elements"][0]["elements"][0]
                 content = self.local_json["content"][15]["elements"][0]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
+                title_text = self.gpt.spa_services_laser_cta_title(title["settings"]["title"])
                 content_text = self.gpt.spa_services_laser_map_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
@@ -240,8 +258,8 @@ class LaserHairRemovalChicago:
                 title = self.local_json["content"][16]["elements"][0]
                 content = self.local_json["content"][16]["elements"][1]
 
-                title_text = self.gpt.spa_services_conclusion_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_conclusion_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_laser_conclusion_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_laser_conclusion_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text

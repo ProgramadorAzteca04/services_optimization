@@ -3,9 +3,12 @@
 from dotenv import load_dotenv
 import os
 from playwright.sync_api import Page
-from app.utilities.wordpress_utilities import insert_wordpress_data, delete_template
+from app.utilities.wordpress_utilities import insert_wordpress_data
 from app.components.init_layout_component import InitLayout
 from app.api.gpt_api import GPT
+from app.controllers.indexing_controller import indexing_controller
+from app.controllers.form_controller import delete_old_template
+
 
 load_dotenv()
 
@@ -25,7 +28,7 @@ class WordpressComponent:
         url: str,
         init_layout: InitLayout,
         meta_description: str,
-        _id: int,
+        id: int,
     ):
         print("🟢 Iniciando flujo para servicio:", self.service.get("services_name", "Sin servicio"))
 
@@ -51,7 +54,7 @@ class WordpressComponent:
 
 
         # 3. Insertar contenido en WP
-        insert_wordpress_data(
+        result = insert_wordpress_data(
             self.page,
             frase_clave,
             meta_description,
@@ -60,9 +63,13 @@ class WordpressComponent:
         )
 
         # 4. Borrar plantilla antigua si corresponde
-        filtro_slug = self.service.get("slug", "") if self.service else ""
-        delete_template(self.page, filtro=filtro_slug)
+        if result["status"] == "ok":
+            new_page = result["url"]
+            delete_old_template(self.page, url, new_page)
+            indexing_controller(id, url)
+            print("Optimización realizada con éxito")
+        else:
+            print("Falló el proceso en:", result["report"][-1]["step"])
+            print("Reporte completo:", result["report"])
 
-        # (Opcional) indexación...
-        # from app.controllers.indexing_controller import indexing_controller
-        # indexing_controller(_id, url)
+        return result

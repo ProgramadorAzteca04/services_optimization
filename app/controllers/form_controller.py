@@ -188,7 +188,7 @@ def get_template(page: Page, link: str, file_name: str, design_data: dict):
                 print("Error en la descarga o movimiento del archivo:", e)
 
 
-def delete_old_template(page: Page, ulr: str):
+def delete_old_template(page: Page, ulr: str, new_page: str):
     page.goto(ulr)
     page.wait_for_timeout(6000)
     try:
@@ -212,16 +212,9 @@ def delete_old_template(page: Page, ulr: str):
 
             try:
                 print("Redirigiendo a la pagina optimizada")
-                page.go_back()
-                page.wait_for_timeout(5000)
-                page.go_back()
                 page.wait_for_timeout(10000)
+                page.goto(new_page)
                 try:
-                    page.wait_for_selector(
-                        "//a[contains(normalize-space(text()), 'Edit')]"
-                    )
-                    page.click("//a[contains(normalize-space(text()), 'Edit')]")
-                    page.wait_for_timeout(2000)
                     print("Sustituyendo el slug de pagina")
                     page.wait_for_selector(
                         "//input[@id='yoast-google-preview-slug-metabox']"
