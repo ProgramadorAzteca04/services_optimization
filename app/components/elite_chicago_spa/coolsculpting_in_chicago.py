@@ -6,10 +6,32 @@ from app.controllers import (
     load_json_file,
     save_json_file,
 )
+from app.utilities.utils import choose_random_link
 
-json_file = "app/layouts/elite_chicago_spa/elite_coolsculpting.json"
+
+json_file = "app/layouts/elite_chicago_spa/coolsculpting-in-chicago.json"
+
+links = [
+    {
+        "url": "https://www.elitechicagospa.com/coolsculpting-in-chicago/",
+        "keywords": [
+            "coolsculpting chicago​",
+            "chicago coolsculpting",
+            "best coolsculpting chicago​",
+            "best coolsculpting in chicago",
+            "coolsculpting chicago area",
+            "coolsculpting in chicago",
+            "spa coolsculpting chicago",
+            "coolsculpting chicago price",
+            "coolsculpting deals chicago​",
+            "coolsculpting elite chicago​",
+            "how much is coolsculpting in chicago"
+        ]
+    }
+]
 
 
+url = choose_random_link(links)
 class CoolsculptingChicago:
     def __init__(self, options):
         self.options = options

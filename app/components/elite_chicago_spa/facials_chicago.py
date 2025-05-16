@@ -7,8 +7,23 @@ from app.controllers import (
     save_json_file,
 )
 
-json_file = "app/components/elite_chicago_spa/facials_chicago.json"
+from app.utilities.utils import choose_random_link
 
+json_file = "app/components/elite_chicago_spa/facials-chicago.json"
+links = [
+    {
+        "url": "https://www.elitechicagospa.com/facials-chicago/",
+        "keywords": [
+            "facial chicago​", "facials chicago​", "best facial chicago", "chicago facials", 
+            "best facial in chicago​", "facial spa chicago il", "best facials chicago", 
+            "best facials in chicago", "chicago facial spa", "facials in chicago", 
+            "facial in chicago​", "mens facial chicago", "facial chicago near me", 
+            "spa facial chicago", "facial chicago il", "facial spas chicago"
+        ]
+    }
+]
+
+url = choose_random_link(links)
 
 class FacialsChicago:
     def __init__(self, options):
