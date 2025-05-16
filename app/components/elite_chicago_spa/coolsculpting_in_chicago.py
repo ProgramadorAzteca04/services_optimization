@@ -7,7 +7,7 @@ from app.controllers import (
     save_json_file,
 )
 
-json_file = "app/layouts/elite_coolsculpting.json"
+json_file = "app/layouts/elite_chicago_spa/elite_coolsculpting.json"
 
 
 class CoolsculptingChicago:
@@ -22,7 +22,7 @@ class CoolsculptingChicago:
         try:
             content = self.local_json["content"][1]["elements"][0]["elements"][2]
 
-            content_text = self.gpt.spa_services_coulping_introduction_desc(
+            content_text = self.gpt.spa_services_coolsculpting_introduction_desc(
                 content["settings"]["editor"]
             )
 
@@ -39,8 +39,8 @@ class CoolsculptingChicago:
                 title = self.local_json["content"][2]["elements"][0]
                 content = self.local_json["content"][2]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_coulping_cta1_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_coolsculpting_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_cta_coolsculpting_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -55,8 +55,8 @@ class CoolsculptingChicago:
                 title = self.local_json["content"][5]["elements"][0]
                 subtitle = self.local_json["content"][5]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                subtitle_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
+                title_text = self.gpt.spa_services_coolsculpting_cta_title(title["settings"]["title"])
+                subtitle_text = self.gpt.spa_services_cta_coolsculpting_desc(title["settings"]["title"])
 
                 title["settings"]["title"] = title_text
                 subtitle["settings"]["title"] = subtitle_text
@@ -72,8 +72,8 @@ class CoolsculptingChicago:
                 title = self.local_json["content"][17]["elements"][0]
                 content = self.local_json["content"][17]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.cta_desc_elite_facials(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_coolsculpting_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_cta_coolsculpting_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -88,8 +88,8 @@ class CoolsculptingChicago:
                 title = self.local_json["content"][18]["elements"][0]
                 content = self.local_json["content"][18]["elements"][1]["elements"][0]["elements"][0]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_coulping_cta4_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_coolsculpting_cta_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_cta_coolsculpting_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text
@@ -141,8 +141,8 @@ class CoolsculptingChicago:
                 title = self.local_json["content"][10]["elements"][0]["elements"][0]
                 subtitle = self.local_json["content"][10]["elements"][0]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                subtitle_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
+                title_text = self.gpt.spa_services_coolsculpting_cta_title(title["settings"]["title"])
+                subtitle_text = self.gpt.spa_services_cta_coolsculpting_desc(title["settings"]["title"])
 
                 title["settings"]["title"] = title_text
                 subtitle["settings"]["title"] = subtitle_text
@@ -158,8 +158,8 @@ class CoolsculptingChicago:
                 title = self.local_json["content"][19]["elements"][0]["elements"][0]
                 content = self.local_json["content"][19]["elements"][1]
 
-                title_text = self.gpt.spa_services_cta_title(title["settings"]["title"])
-                content_text = self.gpt.spa_services_coulping_cta4_desc(content["settings"]["editor"])
+                title_text = self.gpt.spa_services_coolsculpting_conclusion_title(title["settings"]["title"])
+                content_text = self.gpt.spa_services_coolsculpting_conclusion_desc(content["settings"]["editor"])
 
                 title["settings"]["title"] = title_text
                 content["settings"]["editor"] = content_text

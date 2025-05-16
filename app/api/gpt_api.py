@@ -79,167 +79,98 @@ class GPT:
 ###############################################################################################################################
     
 
-    def spa_services_coulping_introduction_desc(self, original_desc, words=40):
+    def spa_services_coolsculpting_introduction_desc(self, original_desc):
         user_message = self.create_message(
             "user",
             (
-               f"""Write a introduction description for a page of {self.service} with a company called: {self.campaign} in the city of {self.city}, {self.state}:
-Your version should maintain the same spirit: uplifting, confident, and action-oriented. The quality of service, materials, professionalism, and efficiency; it should be natural, easy to read, and use language that can be flexible for all audiences. Don't include quotation marks in your answer.
-Avoid clickbait phrases or overused marketing language. Do not include the company name. Keep it within {words} words total.
-For your answer, take into account the structure and the highlighted texts in the original text, so that you create a similar structure, so that the structure is as similar as possible, but with different content.
+                f"""You must rewrite ONLY the visible text content in the following HTML snippet for a coolsculpting page.
 
-Please include the following hyperlinks somewhere in the text:
-<a href=\"https:\/\/www.fda.gov\/medical-devices\/aesthetic-cosmetic-devices\/non-invasive-body-contouring-technologies\" target=\"_blank\" rel=\"noopener\">FDA<\/a>
-<a href=\"https:\/\/elitechicagospa.com\/coolsculpting-in-chicago\/\" target=\"_blank\" rel=\"noopener\">CoolSculpting ELITE<\/a>
+    ⚠️ DO NOT remove, modify, or replace ANY HTML structure.
+    ⚠️ DO NOT touch, change, or delete any of the following:
+    - <a href="..."> or its href
+    - <h1>, <h2>, <span>, <div>, or any other tags
+    - Class names, IDs, attributes, or tag nesting
 
-you can take the original text as a reference.
-Original text: {original_desc}
-give me the answer in the language: {self.language}
-"""
+    ✅ You must preserve the entire original HTML exactly as-is. Only change the plain text **inside** the tags.
+
+    ✅ The rewritten version MUST:
+    - Start with the same tag and preserve it exactly
+    - Keep the same sentence type (e.g., question stays a question)
+    - Avoid company names, city names, quotation marks, and marketing fluff
+    - Keep the same character count as close as possible
+    - Be unique in context (not reused)
+
+    💡 DO NOT wrap the rewritten content in new tags. Just return the full HTML structure with the updated inner text.
+
+    ORIGINAL HTML:
+    {original_desc}
+    """
             ),
         )
         return self.generate_response(
             "gpt-3.5-turbo",
             [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
-        ).replace('"', "")  
+        ).strip().replace('"', "")
     
 
-    def spa_services_cta_title(self, original_title, words=10):
+    def spa_services_coolsculpting_cta_title(self, original_title):
         user_message = self.create_message(
             "user",
             (
-               f"""Write a title for a page of {self.service} with a company called: {self.campaign} in the city of {self.city}, {self.state}:
-Your version should maintain the same spirit: uplifting, confident, and action-oriented. The quality of service, materials, professionalism, and efficiency; it should be natural, easy to read, and use language that can be flexible for all audiences. Don't include quotation marks in your answer.
-Avoid clickbait phrases or overused marketing language. Do not include the company name. Keep it within {words} words total.
-For your answer, take into account the structure and the highlighted texts in the original text, so that you create a similar structure, so that the structure is as similar as possible, but with different content.
+                f"""Rewrite the description of the service of coolsculpting for a  page.
 
-you can take the original text as a reference.
-Original text: {original_title}
-give me the answer in the language: {self.language}
-"""
+    - Under no circumstance can the original HTML structure be lost or changed.
+    - Preserve the exact same HTML structure and formatting (e.g., headings, lists, links).
+    - Do not remove or alter any URLs in the original.
+    - Maintain the same sentence type, tone, and context. For example, if the input is a question, your version must also be a paraphrased question.
+    - Maintain the original meaning and communicative intent of the input.
+    - Avoid using quotation marks, the company name, or city.
+    - Avoid clickbait phrases or overused marketing language.
+    - Keep the same character count as close as possible, but no more than 10 words.
+    - Do not use any special characters such as asterisks (*), underscores (_), or decorative symbols that are not present in the original.
+    - Keep the same character count as close as possible.
+    - Output only the rewritten version. Do not include the original text in your response.
+    - Every output must be contextually unique, even if the input is the same.
+    - All original links (URLs) must be preserved exactly as they are.
+
+    Original: {original_title}
+    Language: {self.language}
+    """
             ),
         )
         return self.generate_response(
             "gpt-3.5-turbo",
             [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
-        ).replace('"', "")  
+        ).strip().replace('"', "")
 
-    def spa_services_cta_desc(self, original_desc, words=40):
+    def spa_services_cta_coolsculpting_desc(self, original_desc):
         user_message = self.create_message(
             "user",
             (
-               f"""Write a description for a page of {self.service} with a company called: {self.campaign} in the city of {self.city}, {self.state}:
-Your version should maintain the same spirit: uplifting, confident, and action-oriented. The quality of service, materials, professionalism, and efficiency; it should be natural, easy to read, and use language that can be flexible for all audiences. Don't include quotation marks in your answer.
-Avoid clickbait phrases or overused marketing language. Do not include the company name. Keep it within {words} words total.
-For your answer, take into account the structure and the highlighted texts in the original text, so that you create a similar structure, so that the structure is as similar as possible, but with different content.
+                f"""Rewrite the description of the service for a coolsculpting page.
 
-you can take the original text as a reference.
-Original text: {original_desc}
-give me the answer in the language: {self.language}
-"""
+    - Under no circumstance can the original HTML structure be lost or changed.
+    - Preserve the exact same HTML structure and formatting (e.g., headings, lists, links).
+    - Do not remove or alter any URLs in the original.
+    - Keep the same sentence type and tone (if it’s a question, your version must also be a question).
+    - Avoid quotation marks, company name, or city.
+    - Avoid clickbait or overused marketing expressions.
+    - Keep the same character count as close as possible.
+    - Output only the rewritten text.
+    - Every output must be contextually unique, even if the input is the same.
+    - All original links (URLs) must be preserved exactly as they are.
+
+    Original: {original_desc}
+    Language: {self.language}
+    """
             ),
         )
         return self.generate_response(
             "gpt-3.5-turbo",
             [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
-        ).replace('"', "")  
+        ).strip().replace('"', "") 
 
-
-
-
-
-
-    def spa_services_coulping_cta1_desc(self, original_desc, words=40):
-        user_message = self.create_message(
-            "user",
-            (
-               f"""Write a description of call to action for a page of {self.service} with a company called: {self.campaign} in the city of {self.city}, {self.state}:
-Your version should maintain the same spirit: uplifting, confident, and action-oriented. The quality of service, materials, professionalism, and efficiency; it should be natural, easy to read, and use language that can be flexible for all audiences. Don't include quotation marks in your answer.
-Avoid clickbait phrases or overused marketing language. Do not include the company name. Keep it within {words} words total.
-For your answer, take into account the structure and the highlighted texts in the original text, so that you create a similar structure, so that the structure is as similar as possible, but with different content.
-
-Please include the following hyperlinks somewhere in the text:
-<a href=\"https:\/\/www.fda.gov\/medical-devices\/aesthetic-cosmetic-devices\/non-invasive-body-contouring-technologies\" target=\"_blank\" rel=\"noopener\">FDA<\/a>
-
-
-you can take the original text as a reference.
-Original text: {original_desc}
-give me the answer in the language: {self.language}
-"""
-            ),
-        )
-        return self.generate_response(
-            "gpt-3.5-turbo",
-            [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
-        ).replace('"', "")  
-
-    def spa_services_coulping_cta3_desc(self, original_desc, words=40):
-        user_message = self.create_message(
-            "user",
-            (
-               f"""Write a description of call to action for a page of {self.service} with a company called: {self.campaign} in the city of {self.city}, {self.state}:
-Your version should maintain the same spirit: uplifting, confident, and action-oriented. The quality of service, materials, professionalism, and efficiency; it should be natural, easy to read, and use language that can be flexible for all audiences. Don't include quotation marks in your answer.
-Avoid clickbait phrases or overused marketing language. Do not include the company name. Keep it within {words} words total.
-For your answer, take into account the structure and the highlighted texts in the original text, so that you create a similar structure, so that the structure is as similar as possible, but with different content.
-
-Please include the following hyperlinks somewhere in the text:
-<a href=\"https:\/\/elitechicagospa.com\/coolsculpting-in-chicago\/\" target=\"_blank\" rel=\"noopener\">CoolSculpting at Elite Chicago<\/a>
-
-you can take the original text as a reference.
-Original text: {original_desc}
-give me the answer in the language: {self.language}
-"""
-            ),
-        )
-        return self.generate_response(
-            "gpt-3.5-turbo",
-            [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
-        ).replace('"', "")  
-
-    def spa_services_coulping_cta4_desc(self, original_desc, words=40):
-        user_message = self.create_message(
-            "user",
-            (
-               f"""Write a description of call to action for a page of {self.service} with a company called: {self.campaign} in the city of {self.city}, {self.state}:
-Your version should maintain the same spirit: uplifting, confident, and action-oriented. The quality of service, materials, professionalism, and efficiency; it should be natural, easy to read, and use language that can be flexible for all audiences. Don't include quotation marks in your answer.
-Avoid clickbait phrases or overused marketing language. Do not include the company name. Keep it within {words} words total.
-For your answer, take into account the structure and the highlighted texts in the original text, so that you create a similar structure, so that the structure is as similar as possible, but with different content.
-
-Please include the following hyperlinks somewhere in the text:
-<a href=\"https:\/\/elitechicagospa.com\/coolsculpting-in-chicago\/\">CoolSculpting in Chicago<\/a>
-<a href=\"https:\/\/elitechicagospa.com\/coolsculpting-in-chicago\/\" target=\"_blank\">CoolSculpting Elite<\/a>
-<a href=\"https:\/\/www.chicago.gov\/city\/en.html\" target=\"_blank\">Chicago<\/a>
-
-you can take the original text as a reference.
-Original text: {original_desc}
-give me the answer in the language: {self.language}
-"""
-            ),
-        )
-        return self.generate_response(
-            "gpt-3.5-turbo",
-            [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
-        ).replace('"', "")  
-
-    def spa_services_introduction_desc(self, original_desc, words=40):
-        user_message = self.create_message(
-            "user",
-            (
-               f"""Write a introduction description for a page of {self.service} with a company called: {self.campaign} in the city of {self.city}, {self.state}:
-Your version should maintain the same spirit: uplifting, confident, and action-oriented. The quality of service, materials, professionalism, and efficiency; it should be natural, easy to read, and use language that can be flexible for all audiences. Don't include quotation marks in your answer.
-Avoid clickbait phrases or overused marketing language. Do not include the company name. Keep it within {words} words total.
-For your answer, take into account the structure and the highlighted texts in the original text, so that you create a similar structure, so that the structure is as similar as possible, but with different content.
-
-you can take the original text as a reference.
-Original text: {original_desc}
-give me the answer in the language: {self.language}
-"""
-            ),
-        )
-        return self.generate_response(
-            "gpt-3.5-turbo",
-            [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
-        ).replace('"', "")  
+ 
 
     def faq_services(self):
             system_message = self.create_message("system", self.SYSTEM_MESSAGE)
@@ -260,6 +191,70 @@ give me the answer in the language: {self.language}
             return self.generate_response(
             "gpt-3.5-turbo", [system_message, user_message]
             ).replace('"', "")
+
+
+    def spa_services_coolsculpting_conclusion_title(self, original_title):
+        user_message = self.create_message(
+            "user",
+            (
+                f"""Rewrite this conclusion title for a Laser Hair Removal page.
+
+    - Under no circumstance can the original HTML structure be lost or changed.
+    - Keep the exact formatting and HTML structure.
+    - Match the sentence type (question stays a question).
+    - Do not include quotation marks, company name, or city.
+    - Avoid marketing buzzwords and keep the tone confident.
+    - Keep the word and character count similar.
+    - Output only the rewritten content.
+    - Every output must be contextually unique, even if the input is the same.
+    - All original links (URLs) must be preserved exactly as they are.
+
+    Original: {original_title}
+    Language: {self.language}
+    """
+            ),
+        )
+        return self.generate_response(
+            "gpt-3.5-turbo",
+            [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
+        ).strip().replace('"', "")
+
+
+    def spa_services_coolsculpting_conclusion_desc(self, original_desc):
+        user_message = self.create_message(
+            "user",
+            (
+                f"""You must rewrite ONLY the visible text content in the following HTML snippet for a Laser Hair Removal page conclusion.
+
+    ⚠️ DO NOT remove, modify, or replace ANY HTML structure.
+    ⚠️ DO NOT touch, change, or delete any of the following:
+    - <a href="..."> or its href
+    - <h1>, <h2>, <span>, <div>, or any other tags
+    - Class names, IDs, attributes, or tag nesting
+
+    ✅ You must preserve the entire original HTML exactly as-is. Only change the plain text **inside** the tags.
+
+    ✅ The rewritten version MUST:
+    - Start with the same tag and preserve it exactly
+    - Keep the same sentence type (e.g., statement stays a statement)
+    - Avoid company names, city names, quotation marks, and marketing fluff
+    - Keep the same character count as close as possible
+    - Be unique in context (not reused)
+    - Use clear, confident, and action-oriented language appropriate for a conclusion
+
+    💡 DO NOT wrap the rewritten content in new tags. Just return the full HTML structure with the updated inner text.
+
+    ORIGINAL HTML:
+    {original_desc}
+
+    Language: {self.language}
+    """
+            ),
+        )
+        return self.generate_response(
+            "gpt-3.5-turbo",
+            [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
+        ).strip().replace('"', "")
 
 ################################### BOTOX ########################################################################
 
@@ -769,4 +764,3 @@ give me the answer in the language: {self.language}
             "gpt-3.5-turbo",
             [self.create_message("system", self.SYSTEM_MESSAGE), user_message],
         ).replace('"', "")
-
